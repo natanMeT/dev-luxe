@@ -59,6 +59,7 @@
   width: 336px;
   height: 336px;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .cube-float {
@@ -278,7 +279,9 @@
   .bottom { transform: rotateX(-90deg) translateZ(100px); }
 
   .ambient-light {
-    width: 250px !important;
-    height: 250px !important;
+    width: 200px !important;
+    height: 200px !important;
+    animation: none !important;
+    opacity: 0.2;
   }
 }

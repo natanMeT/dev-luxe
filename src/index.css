@@ -1,0 +1,124 @@
+:root {
+  --color-onyx: #050505;
+  --color-gold: #d4af37;
+  --color-gold-light: #f1d592;
+  --color-slate: #1a1a1a;
+  --color-white: #ffffff;
+  --color-muted: #888888;
+  
+  --font-main: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-onyx);
+  color: var(--color-white);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--color-gold);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--color-gold);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7b2ff7, #2d7aed);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  border: 1px solid #7b2ff7;
+  color: #c4a0ff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #b4bedc;
+  border: 1px solid rgba(180, 190, 220, 0.3);
+}
+
+.btn-outline:hover {
+  background: linear-gradient(135deg, #7b2ff7, #2d7aed);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+/* Hero Split Layout */
+.hero-split {
+  padding: 0 5%;
+}
+
+@media (max-width: 768px) {
+  .hero-split {
+    text-align: center;
+    padding: 6rem 1rem 2rem;
+  }
+
+  .hero-split .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-split h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .hero-split p {
+    font-size: 1rem !important;
+  }
+
+  .hero-split div[style*="display: flex"][style*="gap"] {
+    justify-content: center;
+  }
+}

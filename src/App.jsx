@@ -85,28 +85,55 @@ const OnyxPortfolio = () => {
           <p style={{ color: 'rgba(180, 190, 220, 0.6)' }}>הצצה קטנה לעבודות האחרונות שלנו</p>
         </div>
         
-        <motion.div 
-          className="portfolio-card"
-          whileHover={{ y: -10 }}
-          style={{ 
-            background: 'var(--color-slate)', 
-            borderRadius: '20px', 
-            overflow: 'hidden',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
-          }}
-        >
-          <div style={{ padding: '3rem' }}>
-            <span style={{ color: '#7b2ff7', fontSize: '0.9rem', fontWeight: 'bold' }}>Hospitality & Luxury</span>
-            <h3 style={{ fontSize: '2.5rem', margin: '1rem 0', color: '#ffffff' }}>מרתף צפת</h3>
-            <p style={{ marginBottom: '2rem', color: 'rgba(180, 190, 220, 0.7)' }}>
-              אתר קונספט יוקרתי עבור בר יין וקוקטיילים. דגש על אווירה סינמטית, אנימציות גלילה וחוויית משתמש פרימיום.
-            </p>
-            <a href="https://safed-bar.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">צפו באתר החי</a>
-          </div>
-          <div style={{ background: 'url("https://safed-bar.netlify.app/hero-bg.png") center/cover', minHeight: '400px' }}></div>
-        </motion.div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          {/* Card 1 – Bar */}
+          <motion.div 
+            className="portfolio-card"
+            whileHover={{ y: -10 }}
+            style={{ 
+              background: 'var(--color-slate)', 
+              borderRadius: '20px', 
+              overflow: 'hidden',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
+            }}
+          >
+            <div style={{ padding: '3rem' }}>
+              <span style={{ color: '#7b2ff7', fontSize: '0.9rem', fontWeight: 'bold' }}>Hospitality & Luxury</span>
+              <h3 style={{ fontSize: '2.5rem', margin: '1rem 0', color: '#ffffff' }}>מרתף צפת</h3>
+              <p style={{ marginBottom: '2rem', color: 'rgba(180, 190, 220, 0.7)' }}>
+                אתר קונספט יוקרתי עבור בר יין וקוקטיילים. דגש על אווירה סינמטית, אנימציות גלילה וחוויית משתמש פרימיום.
+              </p>
+              <a href="https://safed-bar.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">צפו באתר החי</a>
+            </div>
+            <div style={{ background: 'url("https://safed-bar.netlify.app/hero-bg.png") center/cover', minHeight: '400px' }}></div>
+          </motion.div>
+
+          {/* Card 2 – Genesis VR */}
+          <motion.div 
+            className="portfolio-card"
+            whileHover={{ y: -10 }}
+            style={{ 
+              background: 'var(--color-slate)', 
+              borderRadius: '20px', 
+              overflow: 'hidden',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
+            }}
+          >
+            <div style={{ padding: '3rem' }}>
+              <span style={{ color: '#00d4aa', fontSize: '0.9rem', fontWeight: 'bold' }}>VR & Technology</span>
+              <h3 style={{ fontSize: '2.5rem', margin: '1rem 0', color: '#ffffff' }}>Genesis VR</h3>
+              <p style={{ marginBottom: '2rem', color: 'rgba(180, 190, 220, 0.7)' }}>
+                אתר פרימיום לחברת חוויות מציאות מדומה מהתנ"ך. אנימציות 3D, קרוסלה אוטומטית, חלקיקים מרחפים וחוויה סינמטית מלאה.
+              </p>
+              <a href="https://vr-bible.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">צפו באתר החי</a>
+            </div>
+            <div style={{ background: 'url("/genesis-vr-preview.png") center/cover', minHeight: '400px' }}></div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Pricing Section */}

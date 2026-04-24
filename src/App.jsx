@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Globe, Zap, Crown, Mail, Phone, MessageCircle } from 'lucide-react';
 import './index.css';
@@ -7,6 +7,35 @@ import MarqueeBanner from './components/MarqueeBanner';
 import GradientBlob from './components/GradientBlob';
 
 const OnyxPortfolio = () => {
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      // Offset slightly so the cursor doesn't cover the image
+      setMousePos({ x: e.clientX + 20, y: e.clientY + 20 });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const projects = [
+    {
+      id: 'safed-bar',
+      name: 'מרתף צפת',
+      category: 'Hospitality & Luxury',
+      image: 'https://safed-bar.netlify.app/hero-bg.png',
+      link: 'https://safed-bar.netlify.app/',
+    },
+    {
+      id: 'genesis-vr',
+      name: 'Genesis VR',
+      category: 'VR & Technology',
+      image: '/genesis-vr-preview.png',
+      link: 'https://vr-bible.netlify.app/',
+    }
+  ];
+
   const packages = [
     {
       name: 'בסיסי',
@@ -81,62 +110,103 @@ const OnyxPortfolio = () => {
       {/* Scrolling Marquee */}
       <MarqueeBanner />
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="section glass container">
+      {/* Typographic Portfolio Section */}
+      <section id="portfolio" className="section container" style={{ position: 'relative', padding: '8rem 0' }}>
         <div className="text-center" style={{ marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#ffffff' }}>פרויקטים נבחרים</h2>
-          <p style={{ color: 'rgba(180, 190, 220, 0.6)' }}>הצצה קטנה לעבודות האחרונות שלנו</p>
         </div>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-          {/* Card 1 – Bar */}
-          <motion.div 
-            className="portfolio-card"
-            whileHover={{ y: -10 }}
-            style={{ 
-              background: 'var(--color-slate)', 
-              borderRadius: '20px', 
-              overflow: 'hidden',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
-            }}
-          >
-            <div style={{ padding: '3rem' }}>
-              <span style={{ color: '#d4af37', fontSize: '0.9rem', fontWeight: 'bold' }}>Hospitality & Luxury</span>
-              <h3 style={{ fontSize: '2.5rem', margin: '1rem 0', color: '#ffffff' }}>מרתף צפת</h3>
-              <p style={{ marginBottom: '2rem', color: 'rgba(180, 190, 220, 0.7)' }}>
-                אתר קונספט יוקרתי עבור בר יין וקוקטיילים. דגש על אווירה סינמטית, אנימציות גלילה וחוויית משתמש פרימיום.
-              </p>
-              <a href="https://safed-bar.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">צפו באתר החי</a>
-            </div>
-            <div style={{ background: 'url("https://safed-bar.netlify.app/hero-bg.png") center/cover', minHeight: '400px' }}></div>
-          </motion.div>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          {projects.map((project) => (
+            <li 
+              key={project.id}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
+              style={{
+                borderBottom: '1px solid rgba(255,255,255,0.1)',
+                padding: '3rem 0',
+                position: 'relative',
+                cursor: 'pointer',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                transition: 'background 0.3s ease'
+              }}
+              className="portfolio-list-item"
+            >
+              <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <h3 style={{ 
+                    fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', 
+                    margin: 0, 
+                    color: hoveredProject === project.id ? 'var(--color-gold)' : '#ffffff',
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontWeight: 300,
+                    transition: 'color 0.4s ease'
+                  }}>
+                    {project.name}
+                  </h3>
+                  <span style={{ 
+                    color: 'rgba(180, 190, 220, 0.5)', 
+                    fontSize: '1rem', 
+                    letterSpacing: '2px', 
+                    textTransform: 'uppercase',
+                    display: 'block',
+                    marginTop: '0.5rem'
+                  }}>
+                    {project.category}
+                  </span>
+                </div>
+                <div style={{ 
+                  opacity: hoveredProject === project.id ? 1 : 0, 
+                  transform: hoveredProject === project.id ? 'translateX(-20px)' : 'translateX(0)',
+                  transition: 'all 0.4s ease',
+                  color: 'var(--color-gold)'
+                }}>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </a>
+              <div className="mobile-project-image" style={{ background: `url(${project.image}) center/cover no-repeat` }}></div>
+            </li>
+          ))}
+        </ul>
 
-          {/* Card 2 – Genesis VR */}
-          <motion.div 
-            className="portfolio-card"
-            whileHover={{ y: -10 }}
-            style={{ 
-              background: 'var(--color-slate)', 
-              borderRadius: '20px', 
+        {/* Floating Cursor Image */}
+        {projects.map((project) => (
+          <motion.div
+            key={`img-${project.id}`}
+            className="floating-cursor-image"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ 
+              opacity: hoveredProject === project.id ? 1 : 0,
+              scale: hoveredProject === project.id ? 1 : 0.8,
+              x: mousePos.x,
+              y: mousePos.y
+            }}
+            transition={{ type: 'spring', damping: 20, stiffness: 100, mass: 0.5 }}
+            style={{
+              position: 'fixed',
+              top: -150, // center the image on the cursor vertically
+              left: 0,
+              width: '400px',
+              height: '300px',
+              pointerEvents: 'none',
+              zIndex: 100,
+              borderRadius: '12px',
               overflow: 'hidden',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              boxShadow: '0 30px 60px rgba(0,0,0,0.5)'
+              boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
             }}
           >
-            <div style={{ padding: '3rem' }}>
-              <span style={{ color: '#00d4aa', fontSize: '0.9rem', fontWeight: 'bold' }}>VR & Technology</span>
-              <h3 style={{ fontSize: '2.5rem', margin: '1rem 0', color: '#ffffff' }}>Genesis VR</h3>
-              <p style={{ marginBottom: '2rem', color: 'rgba(180, 190, 220, 0.7)' }}>
-                אתר פרימיום לחברת חוויות מציאות מדומה מהתנ"ך. אנימציות 3D, קרוסלה אוטומטית, חלקיקים מרחפים וחוויה סינמטית מלאה.
-              </p>
-              <a href="https://vr-bible.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline">צפו באתר החי</a>
-            </div>
-            <div style={{ background: 'url("/genesis-vr-preview.png") center/cover', minHeight: '400px' }}></div>
+            <div style={{ 
+              width: '100%', 
+              height: '100%', 
+              background: `url(${project.image}) center/cover no-repeat`,
+              filter: 'brightness(0.9)'
+            }}></div>
           </motion.div>
-        </div>
+        ))}
       </section>
 
       {/* Pricing Section */}

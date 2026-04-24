@@ -7,23 +7,13 @@ import MarqueeBanner from './components/MarqueeBanner';
 import GradientBlob from './components/GradientBlob';
 
 const OnyxPortfolio = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Offset slightly so the cursor doesn't cover the image
-      setMousePos({ x: e.clientX + 20, y: e.clientY + 20 });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const projects = [
     {
       id: 'safed-bar',
       name: 'מרתף צפת',
       category: 'Hospitality & Luxury',
+      description: 'אתר קונספט יוקרתי עבור בר יין וקוקטיילים. תוכנן עם דגש על אווירה סינמטית, אנימציות רכות וחוויית משתמש שמעבירה את התחושה של פרימיום כבר מהקליק הראשון.',
       image: 'https://safed-bar.netlify.app/hero-bg.png',
       link: 'https://safed-bar.netlify.app/',
     },
@@ -31,6 +21,7 @@ const OnyxPortfolio = () => {
       id: 'genesis-vr',
       name: 'Genesis VR',
       category: 'VR & Technology',
+      description: 'אתר פרימיום לחברת חוויות מציאות מדומה. עיצוב עתידני, אנימציות 3D, חלקיקים מרחפים וחוויה סינמטית מלאה שלוקחת את המשתמש למסע דיגיטלי.',
       image: '/genesis-vr-preview.png',
       link: 'https://vr-bible.netlify.app/',
     }
@@ -110,103 +101,111 @@ const OnyxPortfolio = () => {
       {/* Scrolling Marquee */}
       <MarqueeBanner />
 
-      {/* Typographic Portfolio Section */}
-      <section id="portfolio" className="section container" style={{ position: 'relative', padding: '8rem 0' }}>
-        <div className="text-center" style={{ marginBottom: '4rem' }}>
+      {/* Open Space Gallery Section */}
+      <section id="portfolio" className="section container" style={{ position: 'relative', padding: '10rem 0' }}>
+        <div className="text-center" style={{ marginBottom: '10rem' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#ffffff' }}>פרויקטים נבחרים</h2>
         </div>
         
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-          {projects.map((project) => (
-            <li 
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '15rem' }}>
+          {projects.map((project, index) => (
+            <div 
               key={project.id}
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
+              className={`portfolio-gallery-item ${index % 2 !== 0 ? 'reverse' : ''}`}
               style={{
-                borderBottom: '1px solid rgba(255,255,255,0.1)',
-                padding: '3rem 0',
-                position: 'relative',
-                cursor: 'pointer',
                 display: 'flex',
-                justifyContent: 'space-between',
                 alignItems: 'center',
-                transition: 'background 0.3s ease'
+                gap: '8rem',
+                flexDirection: index % 2 !== 0 ? 'row-reverse' : 'row'
               }}
-              className="portfolio-list-item"
             >
-              <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <h3 style={{ 
-                    fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', 
-                    margin: 0, 
-                    color: hoveredProject === project.id ? 'var(--color-gold)' : '#ffffff',
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontWeight: 300,
-                    transition: 'color 0.4s ease'
-                  }}>
-                    {project.name}
-                  </h3>
-                  <span style={{ 
-                    color: 'rgba(180, 190, 220, 0.5)', 
-                    fontSize: '1rem', 
-                    letterSpacing: '2px', 
-                    textTransform: 'uppercase',
-                    display: 'block',
-                    marginTop: '0.5rem'
-                  }}>
-                    {project.category}
-                  </span>
-                </div>
+              {/* Image Block */}
+              <motion.div 
+                className="portfolio-image-block"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                style={{ flex: '1.5' }}
+              >
                 <div style={{ 
-                  opacity: hoveredProject === project.id ? 1 : 0, 
-                  transform: hoveredProject === project.id ? 'translateX(-20px)' : 'translateX(0)',
-                  transition: 'all 0.4s ease',
-                  color: 'var(--color-gold)'
+                  width: '100%', 
+                  height: '600px', 
+                  background: `url(${project.image}) center/cover no-repeat`,
+                  borderRadius: '0', // No border radius
+                  boxShadow: 'none' // No shadow
+                }}></div>
+              </motion.div>
+
+              {/* Text Block */}
+              <motion.div 
+                className="portfolio-text-block"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                style={{ flex: '1', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
+              >
+                <span style={{ 
+                  color: 'var(--color-gold)', 
+                  fontSize: '0.9rem', 
+                  letterSpacing: '2px', 
+                  textTransform: 'uppercase',
+                  marginBottom: '1rem',
+                  display: 'block'
                 }}>
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  {project.category}
+                </span>
+                
+                <h3 style={{ 
+                  fontSize: 'clamp(3rem, 5vw, 5rem)', 
+                  margin: '0 0 2rem 0', 
+                  color: '#ffffff',
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 300,
+                  lineHeight: 1.1
+                }}>
+                  {project.name}
+                </h3>
+                
+                <p style={{ 
+                  color: 'rgba(180, 190, 220, 0.7)', 
+                  fontSize: '1.2rem', 
+                  lineHeight: 1.8,
+                  marginBottom: '3rem',
+                  maxWidth: '450px'
+                }}>
+                  {project.description}
+                </p>
+
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="gallery-link-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    fontSize: '1.1rem',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                    borderBottom: '1px solid rgba(255,255,255,0.3)',
+                    paddingBottom: '0.5rem',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  צפו באתר החי
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(180deg)' }}>
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
-                </div>
-              </a>
-              <div className="mobile-project-image" style={{ background: `url(${project.image}) center/cover no-repeat` }}></div>
-            </li>
+                </a>
+              </motion.div>
+            </div>
           ))}
-        </ul>
-
-        {/* Floating Cursor Image */}
-        {projects.map((project) => (
-          <motion.div
-            key={`img-${project.id}`}
-            className="floating-cursor-image"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ 
-              opacity: hoveredProject === project.id ? 1 : 0,
-              scale: hoveredProject === project.id ? 1 : 0.8,
-              x: mousePos.x,
-              y: mousePos.y
-            }}
-            transition={{ type: 'spring', damping: 20, stiffness: 100, mass: 0.5 }}
-            style={{
-              position: 'fixed',
-              top: -150, // center the image on the cursor vertically
-              left: 0,
-              width: '400px',
-              height: '300px',
-              pointerEvents: 'none',
-              zIndex: 100,
-              borderRadius: '12px',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
-            }}
-          >
-            <div style={{ 
-              width: '100%', 
-              height: '100%', 
-              background: `url(${project.image}) center/cover no-repeat`,
-              filter: 'brightness(0.9)'
-            }}></div>
-          </motion.div>
-        ))}
+        </div>
       </section>
 
       {/* Pricing Section */}

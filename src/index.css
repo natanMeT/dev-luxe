@@ -138,26 +138,17 @@ ul {
     flex-shrink: 0;
   }
 
-  .portfolio-list-item {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-  
-  .portfolio-list-item a {
-    flex-direction: column;
-    align-items: flex-start !important;
-  }
-  
-  .portfolio-list-item svg {
-    margin-top: 1rem;
+  .portfolio-gallery-item {
+    flex-direction: column !important;
+    gap: 3rem !important;
   }
 
-  .floating-cursor-image {
-    display: none !important;
+  .portfolio-image-block, .portfolio-text-block {
+    width: 100%;
   }
-
-  .mobile-project-image {
-    display: block;
+  
+  .portfolio-image-block > div {
+    height: 400px !important;
   }
 
   .hero-text-content {

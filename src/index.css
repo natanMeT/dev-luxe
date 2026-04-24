@@ -99,10 +99,35 @@ ul {
   padding: 0 5%;
 }
 
+/* Hero Layout */
+.hero-cube-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+.hero-text-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin-top: 6rem;
+}
+
 @media (max-width: 768px) {
   .hero-split {
     text-align: center;
     padding: 6rem 1rem 2rem;
+  }
+
+  .hero-cube-wrapper {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text-content {
+    margin-top: 2rem;
   }
 
   .hero-split .container {

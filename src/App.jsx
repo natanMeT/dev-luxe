@@ -54,11 +54,11 @@ const OnyxPortfolio = () => {
     <div className="portfolio-wrapper" dir="rtl">
       {/* Hero Section */}
       <header className="hero-split" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
-        <div style={{ position: 'relative', width: '400px', height: '400px', marginBottom: '2rem' }}>
+        <div className="hero-cube-wrapper">
           <FloatingOnyx />
         </div>
         <motion.div
-          style={{ position: 'relative', zIndex: 1, maxWidth: '800px', marginTop: '6rem' }}
+          className="hero-text-content"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

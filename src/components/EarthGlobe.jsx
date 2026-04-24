@@ -42,7 +42,7 @@ const EarthGlobe = () => {
   const lats = [25, 0, -25];
   lats.forEach((lat, index) => {
     const coords = [];
-    for (let lng = -180; lng <= 180; lng += 5) {
+    for (let lng = -180; lng <= 180; lng += 1) { // 1-degree resolution for perfect circle
       coords.push([lat, lng, 0.01]);
     }
     paths.push({ 
@@ -56,11 +56,11 @@ const EarthGlobe = () => {
   lngs.forEach((lng, index) => {
     const coords = [];
     // Go up the front side
-    for (let lat = -90; lat <= 90; lat += 5) {
+    for (let lat = -90; lat <= 90; lat += 1) { // 1-degree resolution
       coords.push([lat, lng, 0.01]);
     }
     // Go down the back side
-    for (let lat = 90; lat >= -90; lat -= 5) {
+    for (let lat = 90; lat >= -90; lat -= 1) { // 1-degree resolution
       coords.push([lat, lng === 0 ? 180 : -90, 0.01]);
     }
     paths.push({ 
@@ -89,9 +89,9 @@ const EarthGlobe = () => {
         pathPointLng={p => p[1]}
         pathPointAlt={p => p[2]}
         pathColor="color"
-        pathDashLength={0.5} // Continuous solid tail taking 50% of the globe
-        pathDashGap={0.5} // Wait until the tail finishes before repeating
-        pathDashAnimateTime={8000} // Slow and luxurious (8 seconds per full rotation)
+        // Use solid lines by setting dash length to 1 (100%) and gap to 0
+        pathDashLength={1} 
+        pathDashGap={0} 
         pathStroke={1.5}
         
         // Optional: Atmospheric glow

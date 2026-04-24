@@ -3,6 +3,19 @@ import { motion } from 'framer-motion';
 import './FloatingOnyx.css';
 
 const FloatingOnyx = () => {
+  // Generate coordinates for a 3x3x3 grid (-1, 0, 1 for x, y, z)
+  const miniCubes = [];
+  for (let x = -1; x <= 1; x++) {
+    for (let y = -1; y <= 1; y++) {
+      for (let z = -1; z <= 1; z++) {
+        miniCubes.push({ x, y, z });
+      }
+    }
+  }
+
+  // Define the 6 faces for each mini-cube
+  const faces = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+
   return (
     <div className="onyx-scene">
       {/* Ambient color lights */}
@@ -17,8 +30,8 @@ const FloatingOnyx = () => {
           rotateY: [0, 360],
         }}
         transition={{ 
-          rotateY: { duration: 17.5, repeat: Infinity, ease: "linear" },
-          rotateX: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
+          rotateY: { duration: 25, repeat: Infinity, ease: "linear" },
+          rotateX: { duration: 8, repeat: Infinity, ease: "easeInOut" }
         }}
       >
         <motion.div
@@ -26,38 +39,28 @@ const FloatingOnyx = () => {
           animate={{ y: [-15, 15, -15] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="liquid-cube">
-            <div className="face front">
-              <div className="face-inner"></div>
-              <div className="face-reflection"></div>
-              <div className="face-edge edge-top"></div>
-              <div className="face-edge edge-right"></div>
-              <div className="face-edge edge-bottom"></div>
-              <div className="face-edge edge-left"></div>
-            </div>
-            <div className="face back">
-              <div className="face-inner"></div>
-              <div className="face-reflection"></div>
-            </div>
-            <div className="face right">
-              <div className="face-inner"></div>
-              <div className="face-reflection"></div>
-              <div className="face-edge edge-top"></div>
-              <div className="face-edge edge-right"></div>
-            </div>
-            <div className="face left">
-              <div className="face-inner"></div>
-              <div className="face-reflection"></div>
-            </div>
-            <div className="face top">
-              <div className="face-inner"></div>
-              <div className="face-reflection"></div>
-              <div className="face-edge edge-top"></div>
-              <div className="face-edge edge-left"></div>
-            </div>
-            <div className="face bottom">
-              <div className="face-inner"></div>
-            </div>
+          <div className="rubiks-cube">
+            {miniCubes.map((pos, i) => {
+              // Calculate translation for each mini-cube.
+              // A mini-cube is roughly 90px. With gaps, let's say spacing is 105px.
+              const spacing = 105; 
+              // CSS custom properties to pass positions to CSS
+              const style = {
+                '--x': `${pos.x * spacing}px`,
+                '--y': `${pos.y * spacing}px`,
+                '--z': `${pos.z * spacing}px`,
+              };
+
+              return (
+                <div key={i} className="mini-cube" style={style}>
+                  {faces.map((face) => (
+                    <div key={face} className={`mini-face ${face}`}>
+                      <div className="mini-face-inner"></div>
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </motion.div>
       </motion.div>

@@ -64,7 +64,7 @@ const OnyxPortfolio = () => {
           transition={{ duration: 1 }}
         >
           <h2 style={{ letterSpacing: '6px', fontSize: '1rem', marginBottom: '1.5rem', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: 'var(--color-gold)' }}>Dev Luxe</h2>
-          <h1 style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)', lineHeight: 1.05, marginBottom: '2rem', fontFamily: "'Frank Ruhl Libre', serif", fontWeight: 700, color: '#ffffff', textShadow: '0 0 80px rgba(123, 47, 247, 0.15)' }}>בונים אימפריות <br /> דיגיטליות</h1>
+
           <p style={{ fontSize: '1.3rem', color: 'rgba(180, 190, 220, 0.8)', maxWidth: '550px', margin: '0 auto 3rem', lineHeight: 1.8 }}>
             אנחנו לא רק בונים אתרים. אנחנו יוצרים חוויות יוקרה סינמטיות שממירות מבקרים ללקוחות משלמים.
           </p>

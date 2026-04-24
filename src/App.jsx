@@ -189,15 +189,15 @@ const OnyxPortfolio = () => {
           <p style={{ marginBottom: '3rem', color: 'rgba(180, 190, 220, 0.6)' }}>זמינים עבורכם לכל שאלה או התייעצות</p>
           
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
-            <a href="mailto:contact@onyx.dev" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+            <a href="mailto:natanturgeman365@gmail.com" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
               <Mail color="#7b2ff7" />
               <span>שלחו מייל</span>
             </a>
-            <a href="tel:+972000000000" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+            <a href="tel:+972538514365" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
               <Phone color="#2d7aed" />
               <span>חייגו אלינו</span>
             </a>
-            <a href="https://wa.me/972000000000" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+            <a href="https://wa.me/972538514365" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
               <MessageCircle color="#00d4aa" />
               <span>וואטסאפ</span>
             </a>

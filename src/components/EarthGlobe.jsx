@@ -47,7 +47,7 @@ const EarthGlobe = () => {
     }
     paths.push({ 
       coords, 
-      color: index % 2 === 0 ? ['#d4af37', '#00d4aa'] : ['#00d4aa', '#d4af37'] 
+      color: index % 2 === 0 ? ['#0b3d91', '#e0f7fa'] : ['#e0f7fa', '#0b3d91'] 
     });
   });
 
@@ -65,7 +65,7 @@ const EarthGlobe = () => {
     }
     paths.push({ 
       coords, 
-      color: index === 0 ? ['#d4af37', '#0f3a28'] : ['#0f3a28', '#d4af37'] 
+      color: index === 0 ? ['#0b3d91', '#e0f7fa'] : ['#e0f7fa', '#0b3d91'] 
     });
   });
 
@@ -89,9 +89,10 @@ const EarthGlobe = () => {
         pathPointLng={p => p[1]}
         pathPointAlt={p => p[2]}
         pathColor="color"
-        // Use solid lines by setting dash length to 1 (100%) and gap to 0
-        pathDashLength={1} 
-        pathDashGap={0} 
+        // Continuous moving tail taking 50% of the globe length
+        pathDashLength={0.5} 
+        pathDashGap={0.5} 
+        pathDashAnimateTime={6000} // Slow and steady movement
         pathStroke={1.5}
         
         // Optional: Atmospheric glow

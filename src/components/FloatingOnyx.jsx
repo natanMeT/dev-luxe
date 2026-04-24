@@ -26,12 +26,14 @@ const FloatingOnyx = () => {
       <motion.div 
         className="cube-perspective"
         animate={{ 
-          rotateX: [25, 35, 25],
+          rotateX: [0, 360],
           rotateY: [0, 360],
+          rotateZ: [0, 360]
         }}
         transition={{ 
-          rotateY: { duration: 25, repeat: Infinity, ease: "linear" },
-          rotateX: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+          duration: 35, 
+          repeat: Infinity, 
+          ease: "linear" 
         }}
       >
         <motion.div

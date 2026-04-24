@@ -89,16 +89,16 @@
 }
 
 .slice-top {
-  animation: spinTop 16s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation: spinTop 16s ease-in-out infinite;
 }
 
 .slice-middle {
-  animation: spinMiddle 16s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation: spinMiddle 16s ease-in-out infinite;
   animation-delay: 2s;
 }
 
 .slice-bottom {
-  animation: spinBottom 16s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation: spinBottom 16s ease-in-out infinite;
   animation-delay: 4s;
 }
 

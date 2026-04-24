@@ -37,45 +37,37 @@ const EarthGlobe = () => {
     }
   }, []);
 
-  // Center point (e.g., Tel Aviv / Global Hub)
-  const HUB_LAT = 32.0853;
-  const HUB_LNG = 34.7818;
+  // Generate 3 horizontal paths (latitude lines)
+  const paths = [];
+  const lats = [25, 0, -25];
+  lats.forEach((lat, index) => {
+    const coords = [];
+    for (let lng = -180; lng <= 180; lng += 5) {
+      coords.push([lat, lng, 0.01]);
+    }
+    paths.push({ 
+      coords, 
+      color: index % 2 === 0 ? ['#d4af37', '#00d4aa'] : ['#00d4aa', '#d4af37'] 
+    });
+  });
 
-  // Major global destinations
-  const destinations = [
-    { lat: 40.7128, lng: -74.0060, name: "New York" },
-    { lat: 51.5074, lng: -0.1278, name: "London" },
-    { lat: 35.6762, lng: 139.6503, name: "Tokyo" },
-    { lat: -33.8688, lng: 151.2093, name: "Sydney" },
-    { lat: 25.2048, lng: 55.2708, name: "Dubai" },
-    { lat: 48.8566, lng: 2.3522, name: "Paris" },
-    { lat: 1.3521, lng: 103.8198, name: "Singapore" },
-    { lat: 34.0522, lng: -118.2437, name: "Los Angeles" },
-    { lat: -23.5505, lng: -46.6333, name: "São Paulo" },
-    { lat: 55.7558, lng: 37.6173, name: "Moscow" },
-    { lat: -1.2921, lng: 36.8219, name: "Nairobi" }
-  ];
-
-  // Generate arcs connecting the hub to destinations
-  const arcsData = destinations.map(dest => ({
-    startLat: HUB_LAT,
-    startLng: HUB_LNG,
-    endLat: dest.lat,
-    endLng: dest.lng,
-    // Luxury gradient from Gold to Deep Teal
-    color: ['#d4af37', '#00d4aa']
-  }));
-
-  // Create reverse arcs for incoming traffic
-  const reverseArcsData = destinations.map(dest => ({
-    startLat: dest.lat,
-    startLng: dest.lng,
-    endLat: HUB_LAT,
-    endLng: HUB_LNG,
-    color: ['#0f3a28', '#d4af37']
-  }));
-
-  const allArcs = [...arcsData, ...reverseArcsData];
+  // Generate 2 vertical paths (longitude lines)
+  const lngs = [0, 90];
+  lngs.forEach((lng, index) => {
+    const coords = [];
+    // Go up the front side
+    for (let lat = -90; lat <= 90; lat += 5) {
+      coords.push([lat, lng, 0.01]);
+    }
+    // Go down the back side
+    for (let lat = 90; lat >= -90; lat -= 5) {
+      coords.push([lat, lng === 0 ? 180 : -90, 0.01]);
+    }
+    paths.push({ 
+      coords, 
+      color: index === 0 ? ['#d4af37', '#0f3a28'] : ['#0f3a28', '#d4af37'] 
+    });
+  });
 
   return (
     <div className="globe-container">
@@ -90,14 +82,17 @@ const EarthGlobe = () => {
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         
-        // Arc configuration for flight paths
-        arcsData={allArcs}
-        arcColor="color"
-        arcAltitude={0.015} // Hug the globe tightly
-        arcDashLength={0.95} // Almost solid line
-        arcDashGap={1} // Large gap before it repeats
-        arcDashAnimateTime={3600} // Slowed down by ~30%
-        arcStroke={1.5}
+        // Path configuration for full rotation rings
+        pathsData={paths}
+        pathPoints="coords"
+        pathPointLat={p => p[0]}
+        pathPointLng={p => p[1]}
+        pathPointAlt={p => p[2]}
+        pathColor="color"
+        pathDashLength={0.5} // Continuous solid tail taking 50% of the globe
+        pathDashGap={0.5} // Wait until the tail finishes before repeating
+        pathDashAnimateTime={8000} // Slow and luxurious (8 seconds per full rotation)
+        pathStroke={1.5}
         
         // Optional: Atmospheric glow
         atmosphereColor="#00d4aa"

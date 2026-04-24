@@ -26,10 +26,10 @@ const EarthGlobe = () => {
   }, []);
 
   useEffect(() => {
-    // Auto-rotate
+      // Auto-rotate
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 1.5;
+      globeEl.current.controls().autoRotateSpeed = 1.0; // Slowed down
       globeEl.current.controls().enableZoom = false; // Disable zoom so it doesn't mess up scrolling
       
       // Set initial point of view (looking at the middle east / europe)
@@ -93,9 +93,10 @@ const EarthGlobe = () => {
         // Arc configuration for flight paths
         arcsData={allArcs}
         arcColor="color"
-        arcDashLength={0.4}
-        arcDashGap={0.2}
-        arcDashAnimateTime={2500}
+        arcAltitude={0.015} // Hug the globe tightly
+        arcDashLength={0.95} // Almost solid line
+        arcDashGap={1} // Large gap before it repeats
+        arcDashAnimateTime={3600} // Slowed down by ~30%
         arcStroke={1.5}
         
         // Optional: Atmospheric glow

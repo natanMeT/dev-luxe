@@ -162,12 +162,30 @@
   position: absolute;
   width: 90px;
   height: 90px;
-  /* Dark cube face with cyan neon borders */
   background: #11151a;
-  border: 1.5px solid #00d4aa;
-  box-shadow: inset 0 0 15px rgba(0, 212, 170, 0.1), 0 0 8px rgba(0, 212, 170, 0.4);
   opacity: 0.95;
   overflow: hidden;
+  /* Default Cyan Border */
+  border: 1.5px solid #00d4aa;
+  box-shadow: inset 0 0 15px rgba(0, 212, 170, 0.1), 0 0 8px rgba(0, 212, 170, 0.4);
+}
+
+/* Orange borders */
+.mini-cube:nth-child(3n + 1) .mini-face {
+  border: 1.5px solid #ff7a00;
+  box-shadow: inset 0 0 15px rgba(255, 122, 0, 0.1), 0 0 8px rgba(255, 122, 0, 0.4);
+}
+
+/* Yellow borders */
+.mini-cube:nth-child(4n + 2) .mini-face {
+  border: 1.5px solid #ffd500;
+  box-shadow: inset 0 0 15px rgba(255, 213, 0, 0.1), 0 0 8px rgba(255, 213, 0, 0.4);
+}
+
+/* Light Blue borders */
+.mini-cube:nth-child(5n + 3) .mini-face {
+  border: 1.5px solid #2d7aed;
+  box-shadow: inset 0 0 15px rgba(45, 122, 237, 0.1), 0 0 8px rgba(45, 122, 237, 0.4);
 }
 
 /* Inner reflection to give it a glass/metallic feel */

@@ -236,24 +236,32 @@
 @media (max-width: 768px) {
   .onyx-scene {
     justify-content: center;
+    align-items: center;
     padding-left: 0;
-    perspective: 1000px;
+    perspective: 1200px;
   }
 
   .cube-perspective, .cube-float {
-    width: 220px;
-    height: 220px;
+    width: 250px !important;
+    height: 250px !important;
+    flex-shrink: 0;
   }
   
-  /* Scale down the entire rubiks cube using scale transform */
   .rubiks-cube {
-    transform: translate(-50%, -50%) scale(0.65);
+    width: 100% !important;
+    height: 100% !important;
+    /* Scale down safely without affecting aspect ratio */
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  .cube-slice, .mini-cube, .mini-face {
+    flex-shrink: 0;
   }
 
   .ambient-light {
     width: 200px !important;
     height: 200px !important;
     animation: none !important;
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }

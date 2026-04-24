@@ -63,6 +63,9 @@ const OnyxPortfolio = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
+          <h1 style={{ letterSpacing: '12px', fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '0.5rem', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: '#ffffff', textShadow: '0 0 40px rgba(0, 212, 170, 0.3)' }}>
+            Think Big
+          </h1>
           <h2 style={{ letterSpacing: '6px', fontSize: '1rem', marginBottom: '1.5rem', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: 'var(--color-gold)' }}>Dev Luxe</h2>
 
           <p style={{ fontSize: '1.3rem', color: 'rgba(180, 190, 220, 0.8)', maxWidth: '550px', margin: '0 auto 3rem', lineHeight: 1.8 }}>

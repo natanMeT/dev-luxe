@@ -105,8 +105,8 @@ ul {
 /* Hero Layout */
 .hero-cube-wrapper {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 700px;
+  height: 700px;
   margin-bottom: 2rem;
 }
 
@@ -114,7 +114,7 @@ ul {
   position: relative;
   z-index: 1;
   max-width: 800px;
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -124,8 +124,8 @@ ul {
   }
 
   .hero-cube-wrapper {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     margin-bottom: 1rem;
     flex-shrink: 0;
   }

@@ -40,27 +40,28 @@ const FloatingOnyx = () => {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
           <div className="rubiks-cube">
-            {miniCubes.map((pos, i) => {
-              // Calculate translation for each mini-cube.
-              // A mini-cube is roughly 90px. With gaps, let's say spacing is 105px.
-              const spacing = 105; 
-              // CSS custom properties to pass positions to CSS
-              const style = {
-                '--x': `${pos.x * spacing}px`,
-                '--y': `${pos.y * spacing}px`,
-                '--z': `${pos.z * spacing}px`,
-              };
+            {[-1, 0, 1].map((y) => (
+              <div key={`slice-${y}`} className={`cube-slice slice-${y === -1 ? 'top' : y === 0 ? 'middle' : 'bottom'}`}>
+                {miniCubes.filter(c => c.y === y).map((pos, i) => {
+                  const spacing = 105; 
+                  const style = {
+                    '--x': `${pos.x * spacing}px`,
+                    '--y': `${pos.y * spacing}px`,
+                    '--z': `${pos.z * spacing}px`,
+                  };
 
-              return (
-                <div key={i} className="mini-cube" style={style}>
-                  {faces.map((face) => (
-                    <div key={face} className={`mini-face ${face}`}>
-                      <div className="mini-face-inner"></div>
+                  return (
+                    <div key={i} className="mini-cube" style={style}>
+                      {faces.map((face) => (
+                        <div key={face} className={`mini-face ${face}`}>
+                          <div className="mini-face-inner"></div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              );
-            })}
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </motion.div>
       </motion.div>

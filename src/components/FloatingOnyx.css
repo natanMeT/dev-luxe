@@ -79,6 +79,53 @@
   transform-style: preserve-3d;
 }
 
+/* ============ Cube Slices (For Animation) ============ */
+.cube-slice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.slice-top {
+  animation: spinTop 16s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+.slice-middle {
+  animation: spinMiddle 16s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation-delay: 2s;
+}
+
+.slice-bottom {
+  animation: spinBottom 16s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  animation-delay: 4s;
+}
+
+@keyframes spinTop {
+  0%, 15% { transform: rotateY(0deg); }
+  25%, 40% { transform: rotateY(90deg); }
+  50%, 65% { transform: rotateY(180deg); }
+  75%, 90% { transform: rotateY(270deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes spinMiddle {
+  0%, 15% { transform: rotateY(0deg); }
+  25%, 40% { transform: rotateY(-90deg); }
+  50%, 65% { transform: rotateY(-180deg); }
+  75%, 90% { transform: rotateY(-270deg); }
+  100% { transform: rotateY(-360deg); }
+}
+
+@keyframes spinBottom {
+  0%, 15% { transform: rotateY(0deg); }
+  25%, 40% { transform: rotateY(90deg); }
+  50%, 65% { transform: rotateY(180deg); }
+  75%, 90% { transform: rotateY(270deg); }
+  100% { transform: rotateY(360deg); }
+}
+
 /* ============ Mini Cubes ============ */
 .mini-cube {
   width: 90px;

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Globe, Zap, Crown, Mail, Phone, MessageCircle } from 'lucide-react';
 import './index.css';
-import FloatingOnyx from './components/FloatingOnyx';
+import EarthGlobe from './components/EarthGlobe';
 import MarqueeBanner from './components/MarqueeBanner';
 import GradientBlob from './components/GradientBlob';
 
@@ -55,7 +55,7 @@ const OnyxPortfolio = () => {
       {/* Hero Section */}
       <header className="hero-split" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
         <div className="hero-cube-wrapper">
-          <FloatingOnyx />
+          <EarthGlobe />
         </div>
         <motion.div
           className="hero-text-content"

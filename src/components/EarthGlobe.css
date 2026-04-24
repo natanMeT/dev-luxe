@@ -1,0 +1,37 @@
+.globe-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.globe-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(0, 212, 170, 0.15) 0%, rgba(212, 175, 55, 0.05) 40%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+/* Ensure the canvas (injected by react-globe.gl) respects z-index and doesn't block clicks unnecessarily */
+.globe-container > div {
+  z-index: 1;
+  cursor: grab;
+}
+
+.globe-container > div:active {
+  cursor: grabbing;
+}

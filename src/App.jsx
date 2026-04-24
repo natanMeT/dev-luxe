@@ -32,7 +32,7 @@ const OnyxPortfolio = () => {
         'טופס יצירת קשר מתקדם',
         'SEO (קידום אורגני) בסיסי'
       ],
-      color: '#7b2ff7',
+      color: '#d4af37',
       popular: true
     },
     {
@@ -100,7 +100,7 @@ const OnyxPortfolio = () => {
             }}
           >
             <div style={{ padding: '3rem' }}>
-              <span style={{ color: '#7b2ff7', fontSize: '0.9rem', fontWeight: 'bold' }}>Hospitality & Luxury</span>
+              <span style={{ color: '#d4af37', fontSize: '0.9rem', fontWeight: 'bold' }}>Hospitality & Luxury</span>
               <h3 style={{ fontSize: '2.5rem', margin: '1rem 0', color: '#ffffff' }}>מרתף צפת</h3>
               <p style={{ marginBottom: '2rem', color: 'rgba(180, 190, 220, 0.7)' }}>
                 אתר קונספט יוקרתי עבור בר יין וקוקטיילים. דגש על אווירה סינמטית, אנימציות גלילה וחוויית משתמש פרימיום.
@@ -157,12 +157,12 @@ const OnyxPortfolio = () => {
               style={{ 
                 padding: '3rem', 
                 textAlign: 'center', 
-                border: pkg.popular ? '2px solid #7b2ff7' : '1px solid rgba(255,255,255,0.05)',
+                border: pkg.popular ? '2px solid #d4af37' : '1px solid rgba(255,255,255,0.05)',
                 position: 'relative'
               }}
             >
               {pkg.popular && (
-                <span style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(135deg, #7b2ff7, #2d7aed)', color: '#ffffff', padding: '0.2rem 1rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 'bold' }}>הכי פופולרי</span>
+                <span style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(135deg, #0f3a28, #051a11)', border: '1px solid #d4af37', color: '#d4af37', padding: '0.2rem 1rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 'bold' }}>הכי פופולרי</span>
               )}
               <div style={{ color: pkg.color, marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{pkg.icon}</div>
               <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: pkg.color }}>{pkg.name}</h3>
@@ -190,7 +190,7 @@ const OnyxPortfolio = () => {
           
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
             <a href="mailto:natanturgeman365@gmail.com" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-              <Mail color="#7b2ff7" />
+              <Mail color="#d4af37" />
               <span>שלחו מייל</span>
             </a>
             <a href="tel:+972538514365" className="glass" style={{ padding: '2rem', flex: '1', minWidth: '200px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>

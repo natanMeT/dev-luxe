@@ -250,8 +250,8 @@
   .rubiks-cube {
     width: 100% !important;
     height: 100% !important;
-    /* Scale down safely without affecting aspect ratio */
-    transform: translate(-50%, -50%) scale(0.42);
+    /* Squash width by 15% to fix rectangle distortion on some mobile browsers */
+    transform: translate(-50%, -50%) scale(0.42) scaleX(0.85);
   }
 
   .cube-slice, .mini-cube, .mini-face {

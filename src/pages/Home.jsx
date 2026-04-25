@@ -7,6 +7,7 @@ import '../index.css';
 import EarthGlobe from '../components/EarthGlobe';
 import MarqueeBanner from '../components/MarqueeBanner';
 import GradientBlob from '../components/GradientBlob';
+import ProjectsCarousel from '../components/ProjectsCarousel';
 
 const Home = () => {
 
@@ -90,102 +91,8 @@ const Home = () => {
           <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#ffffff' }}>פרויקטים נבחרים</h2>
         </div>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15rem' }}>
-          {projects.map((project, index) => (
-            <div 
-              key={project.id}
-              className={`portfolio-gallery-item ${index % 2 !== 0 ? 'reverse' : ''}`}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8rem',
-                flexDirection: index % 2 !== 0 ? 'row-reverse' : 'row'
-              }}
-            >
-              {/* Image Block */}
-              <motion.div 
-                className="portfolio-image-block"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                style={{ flex: '1.5' }}
-              >
-                <div style={{ 
-                  width: '100%', 
-                  height: '600px', 
-                  background: `url(${project.image}) center/cover no-repeat`,
-                  borderRadius: '0', // No border radius
-                  boxShadow: 'none' // No shadow
-                }}></div>
-              </motion.div>
-
-              {/* Text Block */}
-              <motion.div 
-                className="portfolio-text-block"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                style={{ flex: '1', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
-              >
-                <span style={{ 
-                  color: 'var(--color-gold)', 
-                  fontSize: '0.9rem', 
-                  letterSpacing: '2px', 
-                  textTransform: 'uppercase',
-                  marginBottom: '1rem',
-                  display: 'block'
-                }}>
-                  {project.category}
-                </span>
-                
-                <h3 style={{ 
-                  fontSize: 'clamp(3rem, 5vw, 5rem)', 
-                  margin: '0 0 2rem 0', 
-                  color: '#ffffff',
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 300,
-                  lineHeight: 1.1
-                }}>
-                  {project.name}
-                </h3>
-                
-                <p style={{ 
-                  color: 'rgba(180, 190, 220, 0.7)', 
-                  fontSize: '1.2rem', 
-                  lineHeight: 1.8,
-                  marginBottom: '3rem',
-                  maxWidth: '450px'
-                }}>
-                  {project.description}
-                </p>
-
-                <Link 
-                  to={`/projects/${project.id}`}
-                  className="gallery-link-btn"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '1rem',
-                    color: '#ffffff',
-                    textDecoration: 'none',
-                    fontSize: '1.1rem',
-                    letterSpacing: '1px',
-                    textTransform: 'uppercase',
-                    borderBottom: '1px solid rgba(255,255,255,0.3)',
-                    paddingBottom: '0.5rem',
-                    transition: 'all 0.3s ease'
-                  }}
-                >
-                  לפרטי הפרויקט
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(180deg)' }}>
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </Link>
-              </motion.div>
-            </div>
-          ))}
+        <div style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', position: 'relative' }}>
+          <ProjectsCarousel projects={projects} />
         </div>
       </section>
 

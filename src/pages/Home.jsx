@@ -260,11 +260,11 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="glass"
+              className={`glass ${pkg.popular ? 'animated-border' : ''}`}
               style={{ 
                 padding: '3rem', 
                 textAlign: 'center', 
-                border: pkg.popular ? '2px solid #d4af37' : '1px solid rgba(255,255,255,0.05)',
+                border: pkg.popular ? 'none' : '1px solid rgba(255,255,255,0.05)',
                 position: 'relative'
               }}
             >

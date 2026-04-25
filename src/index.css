@@ -205,3 +205,34 @@ ul {
   cursor: pointer;
   z-index: 1001;
 }
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.animated-border {
+  border: none !important;
+  position: relative;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px; /* match glass class */
+  padding: 2px; /* border width */
+  background: conic-gradient(from var(--angle), rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.2) 60%, var(--color-gold) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-border 3s linear infinite;
+  pointer-events: none;
+}

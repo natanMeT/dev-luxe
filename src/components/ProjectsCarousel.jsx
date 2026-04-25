@@ -59,6 +59,7 @@ const ProjectsCarousel = ({ projects }) => {
         return (
           <motion.div
             key={project.id}
+            className={isActive ? 'animated-border' : ''}
             onClick={() => handleCardClick(index, project.id)}
             initial={false}
             animate={{
@@ -82,7 +83,7 @@ const ProjectsCarousel = ({ projects }) => {
               margin: '0 auto',
               width: 'clamp(280px, 40vw, 450px)',
               height: 'clamp(350px, 50vw, 550px)',
-              borderRadius: '24px',
+              borderRadius: '20px',
               cursor: isActive ? 'pointer' : 'grab',
               transformStyle: 'preserve-3d',
               // Liquid glass aesthetics
@@ -90,7 +91,7 @@ const ProjectsCarousel = ({ projects }) => {
               boxShadow: isActive 
                 ? '0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(212,175,55,0.1)' 
                 : '0 10px 30px rgba(0,0,0,0.5)',
-              border: '1px solid rgba(255,255,255,0.15)',
+              border: isActive ? 'none' : '1px solid rgba(255,255,255,0.15)',
             }}
           >
             {/* Glassmorphism Title Overlay - Only visible when active or subtly on hover */}
@@ -105,8 +106,8 @@ const ProjectsCarousel = ({ projects }) => {
                 background: 'linear-gradient(to top, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.4) 60%, transparent 100%)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
-                borderBottomLeftRadius: '24px',
-                borderBottomRightRadius: '24px',
+                borderBottomLeftRadius: '20px',
+                borderBottomRightRadius: '20px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',

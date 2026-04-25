@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: var(--color-onyx);
+  background-color: transparent;
   color: var(--color-white);
   font-family: var(--font-main);
   line-height: 1.6;

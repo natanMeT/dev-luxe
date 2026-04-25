@@ -40,7 +40,7 @@ const FluxArchitecture = () => {
             padding: '2rem 1rem',
             boxShadow: '0 0 50px rgba(212, 175, 55, 0.1)',
             position: 'relative',
-            zIndex: 10
+            zIndex: 5
           }}
         >
           <span style={{ color: 'var(--color-gold)', fontSize: '0.8rem', letterSpacing: '2px', fontWeight: 'bold' }}>FLUX CORE</span>
@@ -84,7 +84,7 @@ const FluxArchitecture = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              zIndex: 5,
+              zIndex: 10,
               whiteSpace: 'nowrap',
               boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
             }}

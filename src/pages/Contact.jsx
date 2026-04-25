@@ -150,6 +150,57 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="container" style={{ padding: '0 0 8rem' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 4rem)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem', color: '#fff' }}>ספרו לנו על הפרויקט שלכם</h2>
+            <p style={{ color: 'rgba(180, 190, 220, 0.6)' }}>מלאו את הפרטים ונחזור אליכם עם אסטרטגיה מדויקת.</p>
+          </div>
+          
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} onSubmit={(e) => e.preventDefault()}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>שם מלא *</label>
+                <input type="text" required style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>מספר טלפון *</label>
+                <input type="tel" required style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+              </div>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>סוג העסק</label>
+                <input type="text" placeholder="לדוגמה: עריכת דין, נדל״ן, איקומרס" style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>סוג הפרויקט</label>
+                <input type="text" placeholder="לדוגמה: אתר תדמית 3D, חנות וירטואלית" style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>טווח תקציב משוער</label>
+              <select style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s', cursor: 'pointer', appearance: 'none' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}>
+                <option value="not_sure">טרם הוחלט</option>
+                <option value="1500-4000">1,500 ₪ - 4,000 ₪ (בסיסי)</option>
+                <option value="4000-8000">4,000 ₪ - 8,000 ₪ (מתקדם)</option>
+                <option value="8000+">8,000 ₪ ומעלה (פרימיום)</option>
+              </select>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>ספרו לנו קצת על החזון שלכם</label>
+              <textarea rows="4" style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s', resize: 'vertical' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}></textarea>
+            </div>
+
+            <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem', padding: '1.2rem', fontSize: '1.1rem' }}>שליחת פנייה</button>
+          </form>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="container" style={{ padding: '4rem 0 10rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>

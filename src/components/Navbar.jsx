@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <nav style={{
@@ -28,16 +32,21 @@ const Navbar = () => {
         letterSpacing: '2px',
         textTransform: 'uppercase'
       }}>
-        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Flux</Link>
+        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }} onClick={closeMenu}>Flux</Link>
       </div>
+
+      <button className="mobile-menu-btn" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
       
-      <div style={{ display: 'flex', gap: '2rem' }}>
+      <div className={`nav-links ${isOpen ? 'open' : ''}`} style={{ display: 'flex' }}>
         <Link 
           to="/" 
+          onClick={closeMenu}
           style={{ 
             color: location.pathname === '/' ? '#d4af37' : '#ffffff', 
             textDecoration: 'none',
-            fontSize: '1rem',
+            fontSize: '1.1rem',
             transition: 'color 0.3s ease'
           }}
         >
@@ -45,22 +54,23 @@ const Navbar = () => {
         </Link>
         <Link 
           to="/about" 
+          onClick={closeMenu}
           style={{ 
             color: location.pathname === '/about' ? '#d4af37' : '#ffffff', 
             textDecoration: 'none',
-            fontSize: '1rem',
+            fontSize: '1.1rem',
             transition: 'color 0.3s ease'
           }}
         >
           אודות
         </Link>
-        {/* On home page, these can be anchor links. On other pages, they should link to Home + hash. For simplicity, just link to Home section. */}
         <a 
           href="/#portfolio" 
+          onClick={closeMenu}
           style={{ 
             color: '#ffffff', 
             textDecoration: 'none',
-            fontSize: '1rem',
+            fontSize: '1.1rem',
             transition: 'color 0.3s ease'
           }}
         >
@@ -68,10 +78,11 @@ const Navbar = () => {
         </a>
         <Link 
           to="/contact" 
+          onClick={closeMenu}
           style={{ 
             color: location.pathname === '/contact' ? '#d4af37' : '#ffffff', 
             textDecoration: 'none',
-            fontSize: '1rem',
+            fontSize: '1.1rem',
             transition: 'color 0.3s ease'
           }}
         >

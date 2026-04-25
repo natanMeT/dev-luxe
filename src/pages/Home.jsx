@@ -1,30 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, Globe, Zap, Crown, Mail, Phone, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { projects } from '../data/projects';
 import '../index.css';
 import EarthGlobe from '../components/EarthGlobe';
 import MarqueeBanner from '../components/MarqueeBanner';
 import GradientBlob from '../components/GradientBlob';
 
 const Home = () => {
-  const projects = [
-    {
-      id: 'safed-bar',
-      name: 'מרתף צפת',
-      category: 'Hospitality & Luxury',
-      description: 'אתר קונספט יוקרתי עבור בר יין וקוקטיילים. תוכנן עם דגש על אווירה סינמטית, אנימציות רכות וחוויית משתמש שמעבירה את התחושה של פרימיום כבר מהקליק הראשון.',
-      image: 'https://safed-bar.netlify.app/hero-bg.png',
-      link: 'https://safed-bar.netlify.app/',
-    },
-    {
-      id: 'genesis-vr',
-      name: 'Genesis VR',
-      category: 'VR & Technology',
-      description: 'אתר פרימיום לחברת חוויות מציאות מדומה. עיצוב עתידני, אנימציות 3D, חלקיקים מרחפים וחוויה סינמטית מלאה שלוקחת את המשתמש למסע דיגיטלי.',
-      image: '/genesis-vr-preview.png',
-      link: 'https://vr-bible.netlify.app/',
-    }
-  ];
 
   const packages = [
     {
@@ -92,7 +76,7 @@ const Home = () => {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <a href="#portfolio" className="btn btn-primary">העבודות שלנו</a>
-            <a href="#contact" className="btn btn-outline">דברו איתנו</a>
+            <Link to="/contact" className="btn btn-outline">דברו איתנו</Link>
           </div>
         </motion.div>
       </header>
@@ -177,10 +161,8 @@ const Home = () => {
                   {project.description}
                 </p>
 
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <Link 
+                  to={`/projects/${project.id}`}
                   className="gallery-link-btn"
                   style={{
                     display: 'inline-flex',
@@ -196,14 +178,68 @@ const Home = () => {
                     transition: 'all 0.3s ease'
                   }}
                 >
-                  צפו באתר החי
+                  לפרטי הפרויקט
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(180deg)' }}>
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
-                </a>
+                </Link>
               </motion.div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="section container" style={{ padding: '8rem 0' }}>
+        <div className="text-center" style={{ marginBottom: '5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem', color: '#ffffff', fontFamily: "'Cormorant Garamond', serif" }}>התהליך שלנו</h2>
+          <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '1.1rem' }}>כך אנחנו בונים אימפריה דיגיטלית מאפס</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+          {[
+            { step: '01', title: 'אסטרטגיה', desc: 'מחקר מתחרים, תכנון מסע לקוח ופיצוח ה-DNA של המותג.' },
+            { step: '02', title: 'עיצוב פרימיום', desc: 'יצירת שפה ויזואלית ייחודית, אנימציות ו-UI/UX שמשדר יוקרה.' },
+            { step: '03', title: 'פיתוח מתקדם', desc: 'כתיבת קוד נקי ומהיר ב-React ושילוב טכנולוגיות 3D ו-AI.' },
+            { step: '04', title: 'השקה', desc: 'אופטימיזציה מוחלטת, חיבור למערכות CRM והעלאה לאוויר.' }
+          ].map((item, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.15 }}
+              style={{ padding: '2rem', background: 'rgba(25, 25, 30, 0.3)', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.05)' }}
+            >
+              <div style={{ fontSize: '2.5rem', color: 'var(--color-gold)', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem' }}>{item.step}</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>{item.title}</h3>
+              <p style={{ color: 'rgba(180, 190, 220, 0.7)', fontSize: '0.9rem', lineHeight: 1.6 }}>{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Why It Works Section */}
+      <section className="section container" style={{ padding: '4rem 0 8rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 5rem)', borderRadius: '30px', border: '1px solid rgba(212, 175, 55, 0.1)' }}>
+          <div style={{ flex: 1 }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1.5rem', color: '#ffffff', fontFamily: "'Cormorant Garamond', serif" }}>למה השיטה שלנו עובדת?</h2>
+            <p style={{ color: 'rgba(180, 190, 220, 0.8)', fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+              בעידן שבו כולם משתמשים באותן תבניות, עיצוב פרימיום הוא הדרך היחידה לבלוט. כשאנחנו בונים אתר עם חוויה סינמטית, אנחנו לא רק גורמים לו להיראות יפה – אנחנו משנים את הפסיכולוגיה של הלקוח.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {[
+                'בונה סמכות ואמון מיידי בשניות הראשונות',
+                'מאפשר תמחור גבוה יותר לשירותים שלכם (Premium Positioning)',
+                'מגדיל משמעותית את אחוזי ההמרה מלידים ללקוחות',
+                'משאיר רושם בלתי נשכח מול המתחרים'
+              ].map((benefit, idx) => (
+                <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'rgba(180, 190, 220, 0.9)' }}>
+                  <Check size={20} color="#00d4aa" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -246,7 +282,7 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className="btn btn-primary" style={{ width: '100%' }}>התחילו עכשיו</a>
+              <Link to="/contact" className="btn btn-primary" style={{ width: '100%', display: 'inline-block' }}>התחילו עכשיו</Link>
             </motion.div>
           ))}
         </div>

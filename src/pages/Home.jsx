@@ -12,44 +12,41 @@ const Home = () => {
 
   const packages = [
     {
-      name: 'בסיסי',
-      icon: <Zap className="w-8 h-8" />,
+      name: 'Launch',
       price: 'מ-1,900 ₪',
+      description: 'דף נחיתה מדויק לעסק שרוצה להיראות טוב מהר.',
       features: [
-        'דף נחיתה (One Page) מעוצב',
-        'התאמה מלאה למובייל',
-        'קישור לרשתות חברתיות',
-        'אופטימיזציית מהירות',
-        'אחסון והעלאה לאוויר'
+        'One Page',
+        'מובייל מלא',
+        'CTA ברור',
+        'העלאה ל-Netlify'
       ],
       color: 'rgba(180, 190, 220, 0.7)'
     },
     {
-      name: 'מתקדם',
-      icon: <Globe className="w-8 h-8" />,
+      name: 'Signature',
       price: 'מ-4,500 ₪',
+      description: 'אתר תדמית מלא לעסק שרוצה נוכחות רצינית.',
       features: [
-        'אתר רב-עמודי (עד 5 דפים)',
-        'אנימציות פרימיום (WOW Factor)',
-        'יצירת תוכן חזותי ב-AI',
-        'טופס יצירת קשר מתקדם',
-        'SEO (קידום אורגני) בסיסי'
+        'עד 5 עמודים',
+        'אנימציות פרימיום',
+        'טופס לידים',
+        'SEO בסיסי'
       ],
       color: '#d4af37',
       popular: true
     },
     {
-      name: 'פרימיום',
-      icon: <Crown className="w-8 h-8" />,
+      name: 'Cinematic',
       price: 'מ-8,500 ₪',
+      description: 'חווית מותג עם 3D, וידאו, אוטומציות ותוכן מתקדם.',
       features: [
-        'אתר מותאם אישית מאפס',
-        'הפקת סרטוני וידאו מבוססי AI',
-        'אוטומציית וואטסאפ ולידים',
-        'חיבור CRM ומערכות חכמות',
-        'קופירייטינג וכתיבה שיווקית'
+        '3D / Motion',
+        'AI Visuals',
+        'אוטומציית לידים',
+        'קונספט מותג מלא'
       ],
-      color: '#00d4aa'
+      color: '#ffffff'
     }
   ];
   
@@ -244,12 +241,11 @@ const Home = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="section container" style={{ position: 'relative' }}>
+      <section id="pricing" className="section container" style={{ position: 'relative', paddingBottom: '4rem' }}>
         <GradientBlob />
         <div style={{ position: 'relative', zIndex: 1 }}>
         <div className="text-center" style={{ marginBottom: '5rem' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#ffffff' }}>חבילות ומחירים</h2>
-          <p style={{ color: 'rgba(180, 190, 220, 0.6)' }}>פתרון מדויק לכל שלב של העסק שלך</p>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', marginBottom: '1rem', color: '#ffffff', fontFamily: "var(--font-main)", fontWeight: 300, letterSpacing: '-0.02em' }}>חבילות ברורות. רמת ביצוע לפי<br />עומק הפרויקט.</h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -263,30 +259,68 @@ const Home = () => {
               className={`glass ${pkg.popular ? 'animated-border' : ''}`}
               style={{ 
                 padding: '3rem', 
-                textAlign: 'center', 
+                textAlign: 'right', 
                 border: pkg.popular ? 'none' : '1px solid rgba(255,255,255,0.05)',
-                position: 'relative'
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
               }}
             >
               {pkg.popular && (
-                <span style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(135deg, #0f3a28, #051a11)', border: '1px solid #d4af37', color: '#d4af37', padding: '0.2rem 1rem', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 'bold' }}>הכי פופולרי</span>
+                <span style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: '#f1d592', color: '#050505', padding: '0.3rem 1.5rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 'bold' }}>הכי נכון לרוב העסקים</span>
               )}
-              <div style={{ color: pkg.color, marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{pkg.icon}</div>
-              <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: pkg.color }}>{pkg.name}</h3>
-              <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '2rem' }}>{pkg.price}</div>
-              <ul style={{ textAlign: 'right', marginBottom: '3rem' }}>
+              
+              <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: '#ffffff', fontFamily: "var(--font-main)", fontWeight: 600, letterSpacing: '1px' }}>{pkg.name}</h3>
+              <div style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", color: 'var(--color-gold)', marginBottom: '1rem' }}>{pkg.price}</div>
+              <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '0.95rem', marginBottom: '2.5rem', textAlign: 'center', lineHeight: 1.6, minHeight: '45px' }}>
+                {pkg.description}
+              </p>
+              
+              <ul style={{ width: '100%', padding: 0, margin: 0 }}>
                 {pkg.features.map((feature, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.8rem', fontSize: '0.9rem' }}>
-                    <Check size={16} color="#2d7aed" />
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.75rem', marginBottom: '1rem', fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.9)' }}>
+                    <Check size={16} color="#00d4aa" style={{ flexShrink: 0 }} />
                     {feature}
                   </li>
                 ))}
               </ul>
-              <Link to="/contact" className="btn btn-primary" style={{ width: '100%', display: 'inline-block' }}>התחילו עכשיו</Link>
             </motion.div>
           ))}
         </div>
         </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="container" style={{ padding: '4rem 0 8rem' }}>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          style={{ 
+            background: 'var(--color-slate)', 
+            borderRadius: '30px', 
+            padding: '5rem 2rem', 
+            textAlign: 'center',
+            border: '1px solid rgba(255,255,255,0.05)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '2rem'
+          }}
+        >
+          <span style={{ color: 'var(--color-gold)', letterSpacing: '3px', fontSize: '0.85rem', fontWeight: 600 }}>READY WHEN YOU ARE</span>
+          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff', maxWidth: '800px', lineHeight: 1.1 }}>
+            יש לך עסק שצריך להיראות יקר יותר? זה בדיוק המקום להתחיל.
+          </h2>
+          <Link to="/contact" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '1rem' }}>
+            תאמו שיחת אפיון
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(180deg)' }}>
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </Link>
+        </motion.div>
       </section>
     </div>
   );

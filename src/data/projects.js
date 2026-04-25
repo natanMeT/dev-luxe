@@ -36,5 +36,24 @@ export const projects = [
       ],
       techStack: ['React', 'WebGL / Three.js', 'Framer Motion', 'Tailwind / CSS Modules']
     }
+  },
+  {
+    id: 'luxury-cabins',
+    name: 'מתחם סוויטות וצימרים',
+    category: 'Real Estate & Hospitality',
+    description: 'אתר תדמית מתקדם למתחם צימרים וסוויטות יוקרה. משלב חווית צפייה בגלריות, מידע על מתקנים ועיצוב שמשדר חופש ואלגנטיות.',
+    image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    link: 'https://relaxed-twilight-9ab6c9.netlify.app/',
+    details: {
+      goal: 'להעביר לגולשים את התחושה של חופשה יוקרתית ומרגיעה עוד לפני שהזמינו מקום. יצירת פלטפורמה אסתטית להצגת הסוויטות, הבריכה והמתקנים השונים.',
+      designDirection: 'עיצוב פתוח ונקי המדגיש צילומי נוף ופנים ברזולוציה גבוהה. שימוש בצבעים טבעיים ומרגיעים שמשדרים שלווה ויוקרה.',
+      features: [
+        'גלריות תמונות דינמיות לסוויטות',
+        'ממשק יצירת קשר מהיר',
+        'חוויית משתמש מותאמת אישית למובייל',
+        'אנימציות מעבר חלקות'
+      ],
+      techStack: ['React', 'Netlify']
+    }
   }
 ];

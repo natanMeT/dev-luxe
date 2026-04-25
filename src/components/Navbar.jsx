@@ -39,7 +39,7 @@ const Navbar = () => {
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
       
-      <div className={`nav-links ${isOpen ? 'open' : ''}`} style={{ display: 'flex' }}>
+      <div className={`nav-links ${isOpen ? 'open' : ''}`} style={{ display: 'flex', gap: '2rem' }}>
         <Link 
           to="/" 
           onClick={closeMenu}

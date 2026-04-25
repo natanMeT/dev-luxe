@@ -82,9 +82,22 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', borderTop: '2px solid #2d7aed' }}
           >
-            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif" }}>03. טכנולוגיה, תלת-מימד ואוטומציה</h3>
+            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif" }}>03. טכנולוגיה ותלת-מימד</h3>
             <p style={{ color: 'rgba(180, 190, 220, 0.7)', lineHeight: 1.8 }}>
-              מאחורי העיצוב המרהיב פועלת טכנולוגיה מתקדמת. אנחנו מומחים בבניית אתרי תלת-מימד (3D Websites) באמצעות WebGL ו-React, ומחברים הכל למערכות אוטומציה חכמות (CRM ו-WhatsApp) כדי שהאתר לא רק ייראה מדהים – אלא גם יעבוד בשבילכם 24/7 ויחסוך לכם זמן.
+              מאחורי העיצוב המרהיב פועלת טכנולוגיה מתקדמת. אנחנו מומחים בבניית אתרי תלת-מימד (3D Websites) באמצעות WebGL ו-React, ומחברים הכל למערכות חכמות.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', borderTop: '2px solid #ff007f' }}
+          >
+            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif" }}>04. הפקת תוכן ו-AI</h3>
+            <p style={{ color: 'rgba(180, 190, 220, 0.7)', lineHeight: 1.8 }}>
+              אנחנו מספקים מעטפת קריאייטיב מלאה: הפקת סרטונים שיווקיים ותוכן ויזואלי מהפנט באמצעות טכנולוגיות הבינה המלאכותית (AI) המתקדמות בעולם, כדי לייצר קמפיינים ונוכחות מדיה שאי אפשר להתעלם מהם.
             </p>
           </motion.div>
 

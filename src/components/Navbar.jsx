@@ -28,7 +28,7 @@ const Navbar = () => {
         letterSpacing: '2px',
         textTransform: 'uppercase'
       }}>
-        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Dev Luxe</Link>
+        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Flux</Link>
       </div>
       
       <div style={{ display: 'flex', gap: '2rem' }}>

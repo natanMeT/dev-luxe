@@ -105,7 +105,7 @@ const About = () => {
             background: 'linear-gradient(180deg, rgba(5, 15, 20, 0) 0%, rgba(15, 58, 40, 0.2) 100%)'
           }}
         >
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontFamily: "'Cormorant Garamond', serif" }}>הסטנדרט של Dev Luxe</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', fontFamily: "'Cormorant Garamond', serif" }}>הסטנדרט של Flux</h2>
           <p style={{ fontSize: '1.2rem', color: 'rgba(180, 190, 220, 0.8)', maxWidth: '800px', margin: '0 auto', lineHeight: 2 }}>
             אנחנו עובדים עם מותגים שמבינים שנוכחות דיגיטלית היא לא הוצאה, אלא השקעה. 
             מותגים שרוצים להוביל את התחום שלהם ולא רק להשתתף בו. 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MessageCircle, ChevronDown } from 'lucide-react';
+import FluxArchitecture from '../components/FluxArchitecture';
 
 const Contact = () => {
   // Scroll to top on load
@@ -32,38 +33,51 @@ const Contact = () => {
   return (
     <div className="contact-wrapper" dir="rtl" style={{ minHeight: '100vh', paddingTop: '100px', color: '#ffffff' }}>
       
-      {/* Marketing Header */}
-      <section className="container" style={{ padding: '8rem 0 4rem', textAlign: 'center' }}>
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          style={{ 
-            fontSize: 'clamp(3rem, 6vw, 6rem)', 
-            fontFamily: "'Cormorant Garamond', serif", 
-            fontWeight: 300,
-            marginBottom: '1rem',
-            lineHeight: 1.1,
-            color: '#ffffff'
-          }}
-        >
-          הגיע הזמן לעלות <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>לשלב הבא.</span>
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          style={{ 
-            fontSize: '1.5rem', 
-            color: 'rgba(180, 190, 220, 0.8)', 
-            maxWidth: '700px', 
-            margin: '0 auto', 
-            lineHeight: 1.8 
-          }}
-        >
-          בואו נבנה יחד את הנוכחות הדיגיטלית שתבסס אתכם כמותג המוביל בתחומכם. אנחנו כאן לכל שאלה, התייעצות, או קפיצת מדרגה.
-        </motion.p>
+      {/* Discovery Call Hero */}
+      <section className="container" style={{ padding: '6rem 0 4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            style={{ textAlign: 'right' }}
+          >
+            <h1 style={{ 
+              fontSize: 'clamp(3rem, 5vw, 5rem)', 
+              fontFamily: "'Cormorant Garamond', serif", 
+              fontWeight: 300,
+              marginBottom: '1.5rem',
+              lineHeight: 1.1,
+              color: '#ffffff'
+            }}>
+              בואו נבנה את <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>האימפריה שלכם.</span>
+            </h1>
+            
+            <p style={{ 
+              fontSize: '1.2rem', 
+              color: 'rgba(180, 190, 220, 0.8)', 
+              lineHeight: 1.8,
+              marginBottom: '2rem'
+            }}>
+              האתר שלכם הוא הליבה של העסק. בשיחת האפיון אנחנו נפרק את המטרות שלכם לגורמים, ונרכיב בחזרה אקו-סיסטם דיגיטלי שלם - מעיצוב UX פרימיום, דרך אנימציות 3D ועד למנוע לידים חכם מבוסס AI.
+            </p>
+            
+            <a href="#lead-form" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
+              מלאו את שאלון האפיון ↓
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
+            <FluxArchitecture />
+          </motion.div>
+
+        </div>
       </section>
 
       {/* Contact Methods */}
@@ -151,7 +165,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="container" style={{ padding: '0 0 8rem' }}>
+      <section id="lead-form" className="container" style={{ padding: '0 0 8rem' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 4rem)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem', color: '#fff' }}>ספרו לנו על הפרויקט שלכם</h2>

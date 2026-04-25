@@ -66,17 +66,17 @@ const Navbar = () => {
         >
           פרויקטים
         </a>
-        <a 
-          href="/#contact" 
+        <Link 
+          to="/contact" 
           style={{ 
-            color: '#ffffff', 
+            color: location.pathname === '/contact' ? '#d4af37' : '#ffffff', 
             textDecoration: 'none',
             fontSize: '1rem',
             transition: 'color 0.3s ease'
           }}
         >
           צור קשר
-        </a>
+        </Link>
       </div>
     </nav>
   );

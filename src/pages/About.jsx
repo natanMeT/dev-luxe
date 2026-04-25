@@ -82,9 +82,9 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', borderTop: '2px solid #2d7aed' }}
           >
-            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif" }}>03. טכנולוגיית קצה</h3>
+            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif" }}>03. טכנולוגיה, תלת-מימד ואוטומציה</h3>
             <p style={{ color: 'rgba(180, 190, 220, 0.7)', lineHeight: 1.8 }}>
-              מאחורי העיצוב המרהיב פועלת טכנולוגיה מתקדמת. אנחנו משתמשים ב-React, WebGL ואופטימיזציה מחמירה כדי להבטיח ביצועים מושלמים.
+              מאחורי העיצוב המרהיב פועלת טכנולוגיה מתקדמת. אנחנו מומחים בבניית אתרי תלת-מימד (3D Websites) באמצעות WebGL ו-React, ומחברים הכל למערכות אוטומציה חכמות (CRM ו-WhatsApp) כדי שהאתר לא רק ייראה מדהים – אלא גם יעבוד בשבילכם 24/7 ויחסוך לכם זמן.
             </p>
           </motion.div>
 

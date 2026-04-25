@@ -16,26 +16,26 @@ const ProjectsCarousel = ({ projects }) => {
     }
   };
 
-  const getCardStyles = (index) => {
-    const offset = index - activeIndex;
-    const absOffset = Math.abs(offset);
-    
-    // Base calculations for the arc/coverflow effect
-    const rotateY = offset === 0 ? 0 : offset < 0 ? 35 : -35;
-    
-    // Responsive X spread based on screen size (estimate)
-    // On mobile we might need a smaller multiplier, but framer motion handles it well 
-    // if we use viewport-relative units or percentage, but px is safer for 3D.
-    // We'll use clamp for safety.
-    const spread = window.innerWidth < 768 ? 80 : 160;
-    const x = offset * spread; 
-    
-    const scale = offset === 0 ? 1 : Math.max(0.6, 1 - (absOffset * 0.15));
-    const opacity = offset === 0 ? 1 : Math.max(0.1, 1 - (absOffset * 0.4));
-    const zIndex = 100 - absOffset;
-    
-    return { x, rotateY, scale, opacity, zIndex };
-  };
+    const getCardStyles = (index) => {
+      const offset = index - activeIndex;
+      const absOffset = Math.abs(offset);
+      
+      // Base calculations for the arc/coverflow effect
+      const rotateY = offset === 0 ? 0 : offset < 0 ? 35 : -35;
+      
+      // Responsive X spread based on screen size (estimate)
+      const spread = typeof window !== 'undefined' && window.innerWidth < 768 ? 80 : 160;
+      const x = offset * spread; 
+      
+      // Vertical drop to create an arc (smile curve)
+      const y = absOffset * 40; 
+      
+      const scale = offset === 0 ? 1 : Math.max(0.6, 1 - (absOffset * 0.15));
+      const opacity = offset === 0 ? 1 : Math.max(0.1, 1 - (absOffset * 0.4));
+      const zIndex = 100 - absOffset;
+      
+      return { x, y, rotateY, scale, opacity, zIndex };
+    };
 
   return (
     <div 
@@ -53,7 +53,7 @@ const ProjectsCarousel = ({ projects }) => {
       }}
     >
       {projects.map((project, index) => {
-        const { x, rotateY, scale, opacity, zIndex } = getCardStyles(index);
+        const { x, y, rotateY, scale, opacity, zIndex } = getCardStyles(index);
         const isActive = index === activeIndex;
 
         return (
@@ -63,6 +63,7 @@ const ProjectsCarousel = ({ projects }) => {
             initial={false}
             animate={{
               x,
+              y,
               rotateY,
               scale,
               opacity,

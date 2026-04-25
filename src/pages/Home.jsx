@@ -86,12 +86,12 @@ const Home = () => {
       <MarqueeBanner />
 
       {/* Open Space Gallery Section */}
-      <section id="portfolio" className="section container" style={{ position: 'relative', padding: '10rem 0' }}>
-        <div className="text-center" style={{ marginBottom: '10rem' }}>
+      <section id="portfolio" className="section" style={{ position: 'relative', padding: '10rem 0', overflow: 'hidden' }}>
+        <div className="container text-center" style={{ marginBottom: '5rem' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#ffffff' }}>פרויקטים נבחרים</h2>
         </div>
         
-        <div style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)', position: 'relative' }}>
+        <div style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
           <ProjectsCarousel projects={projects} />
         </div>
       </section>

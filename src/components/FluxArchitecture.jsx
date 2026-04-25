@@ -69,7 +69,7 @@ const FluxArchitecture = () => {
             transition={{ 
               opacity: { duration: 0.8, delay: node.delay },
               scale: { duration: 0.8, delay: node.delay },
-              y: { duration: 3 + Math.random() * 2, repeat: Infinity, ease: "easeInOut", delay: node.delay }
+              y: { duration: 3 + (index % 3), repeat: Infinity, ease: "easeInOut", delay: node.delay }
             }}
             className="glass arch-node"
             style={{

@@ -77,6 +77,9 @@ const ProjectsCarousel = ({ projects }) => {
             }}
             style={{
               position: 'absolute',
+              left: 0,
+              right: 0,
+              margin: '0 auto',
               width: 'clamp(280px, 40vw, 450px)',
               height: 'clamp(350px, 50vw, 550px)',
               borderRadius: '24px',

@@ -291,6 +291,34 @@ const Home = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Premium Add-ons */}
+        <div style={{ marginTop: '5rem', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <div style={{ textAlign: 'right', gridColumn: '1 / -1', marginBottom: '1rem' }}>
+            <h3 style={{ fontSize: '1.8rem', color: '#ffffff', fontFamily: "var(--font-main)", fontWeight: 300 }}>שדרוגי קצה (Add-ons)</h3>
+            <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '1rem' }}>תוספות פרימיום למותגים שדורשים שלמות טכנולוגית ללא פשרות.</p>
+          </div>
+          
+          {[
+            { title: 'ארכיטקטורה מרובת שפות', desc: 'מערכת i18n מלאה (כולל RTL/LTR חלקה) המאפשרת חדירה לשווקים גלובליים.' },
+            { title: 'פורטל לקוחות סגור', desc: 'אזור אישי מאובטח עם התחברות (Login) המיועד ללקוחות ה-VIP שלכם.' },
+            { title: 'עיצוב סאונד אינטראקטיבי', desc: 'הוספת צלילי UI עדינים למיקרו-אינטראקציות, לחוויה שמרגישה כמו אפליקציה.' },
+            { title: 'תשתית אופטימיזציית המרות', desc: 'הכנת האתר לבדיקות A/B דינמיות על מנת למקסם אחוזי סגירה (CRO).' }
+          ].map((addon, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + idx * 0.1 }}
+              style={{ background: 'rgba(255,255,255,0.02)', padding: '2rem', borderRadius: '15px', border: '1px solid rgba(212, 175, 55, 0.1)' }}
+            >
+              <h4 style={{ color: 'var(--color-gold)', fontSize: '1.1rem', marginBottom: '0.8rem', fontFamily: "var(--font-main)" }}>+ {addon.title}</h4>
+              <p style={{ color: 'rgba(180, 190, 220, 0.8)', fontSize: '0.85rem', lineHeight: 1.6 }}>{addon.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
         </div>
       </section>
 

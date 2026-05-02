@@ -1,13 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Globe, Zap, Crown, Mail, Phone, MessageCircle } from 'lucide-react';
+import { Check, Zap, Crown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { projects } from '../data/projects';
-import '../index.css';
-import WovenCanvas from '../components/WovenCanvas';
+import { SplineScene } from '@/components/ui/splite';
+import { Spotlight } from '@/components/ui/spotlight';
 import MarqueeBanner from '../components/MarqueeBanner';
 import GradientBlob from '../components/GradientBlob';
-import ProjectsCarousel from '../components/ProjectsCarousel';
 
 const Home = () => {
 
@@ -56,47 +54,64 @@ const Home = () => {
   
   return (
     <div className="portfolio-wrapper" dir="rtl">
-      {/* Hero Section */}
-      <header className="hero-split" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
-        <div className="hero-cube-wrapper">
-          <WovenCanvas />
-        </div>
-        <motion.div
-          className="hero-text-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h1 style={{ letterSpacing: '12px', fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginBottom: '0.5rem', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: '#ffffff', textShadow: '0 0 40px rgba(0, 212, 170, 0.3)' }}>
-            Think Big
-          </h1>
-          <h2 style={{ letterSpacing: '6px', fontSize: '1rem', marginBottom: '1.5rem', textTransform: 'uppercase', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: 'var(--color-gold)' }}>Flux Studio</h2>
+      
+      {/* ===== HERO — Spline 3D Split ===== */}
+      <header className="relative min-h-screen w-full overflow-hidden" style={{ background: 'black' }}>
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
+        
+        <div className="flex flex-col md:flex-row h-screen items-center" dir="rtl">
+          {/* Right side - Text */}
+          <motion.div 
+            className="flex-1 flex flex-col justify-center px-8 md:px-16 relative z-10 pt-24 md:pt-0"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <h1 
+              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400"
+              style={{ fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.1 }}
+            >
+              Think Big
+            </h1>
+            <h2 
+              className="mt-3 text-lg md:text-xl tracking-[6px] uppercase"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: 'var(--color-gold)' }}
+            >
+              Flux Studio
+            </h2>
 
-          <p style={{ fontSize: '1.3rem', color: 'rgba(180, 190, 220, 0.8)', maxWidth: '550px', margin: '0 auto 3rem', lineHeight: 1.8 }}>
-            אנחנו לא רק בונים אתרים. אנחנו יוצרים חוויות יוקרה סינמטיות שממירות מבקרים ללקוחות משלמים.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <a href="#portfolio" className="btn btn-primary">העבודות שלנו</a>
-            <Link to="/contact" className="btn btn-outline">דברו איתנו</Link>
-          </div>
-        </motion.div>
+            <p className="mt-6 text-base md:text-lg max-w-xl leading-relaxed" style={{ color: 'rgba(180, 190, 220, 0.8)' }}>
+              אנחנו לא רק בונים אתרים. אנחנו יוצרים חוויות יוקרה סינמטיות שממירות מבקרים ללקוחות משלמים.
+            </p>
+
+            <div className="flex gap-4 mt-10 flex-wrap">
+              <a href="#pricing" className="btn btn-primary">ראה חבילות</a>
+              <Link to="/contact" className="btn btn-outline">דברו איתנו</Link>
+            </div>
+          </motion.div>
+
+          {/* Left side - Spline 3D */}
+          <motion.div 
+            className="flex-1 relative h-[50vh] md:h-full w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+          >
+            <SplineScene 
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </motion.div>
+        </div>
       </header>
 
-      {/* Scrolling Marquee */}
+      {/* ===== Scrolling Marquee ===== */}
       <MarqueeBanner />
 
-      {/* Open Space Gallery Section */}
-      <section id="portfolio" className="section" style={{ position: 'relative', padding: '10rem 0', overflow: 'hidden' }}>
-        <div className="container text-center" style={{ marginBottom: '5rem' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#ffffff' }}>פרויקטים נבחרים</h2>
-        </div>
-        
-        <div style={{ width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-          <ProjectsCarousel projects={projects} />
-        </div>
-      </section>
-
-      {/* Process Section */}
+      {/* ===== Process Section ===== */}
       <section className="section container" style={{ padding: '8rem 0' }}>
         <div className="text-center" style={{ marginBottom: '5rem' }}>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem', color: '#ffffff', fontFamily: "'Cormorant Garamond', serif" }}>התהליך שלנו</h2>
@@ -115,7 +130,8 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
-              style={{ padding: '2rem', background: 'rgba(25, 25, 30, 0.3)', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.05)' }}
+              className="glass"
+              style={{ padding: '2rem' }}
             >
               <div style={{ fontSize: '2.5rem', color: 'var(--color-gold)', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem' }}>{item.step}</div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>{item.title}</h3>
@@ -125,7 +141,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why It Works Section */}
+      {/* ===== Why It Works ===== */}
       <section className="section container" style={{ padding: '4rem 0 8rem' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 5rem)', borderRadius: '30px', border: '1px solid rgba(212, 175, 55, 0.1)' }}>
           <div style={{ flex: 1 }}>
@@ -150,7 +166,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* ===== Pricing ===== */}
       <section id="pricing" className="section container" style={{ position: 'relative', paddingBottom: '4rem' }}>
         <GradientBlob />
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -229,7 +245,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* ===== Final CTA ===== */}
       <section className="container" style={{ padding: '4rem 0 8rem' }}>
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}

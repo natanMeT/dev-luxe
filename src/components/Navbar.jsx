@@ -65,7 +65,7 @@ const Navbar = () => {
           אודות
         </Link>
         <a 
-          href="/#portfolio" 
+          href="/#pricing" 
           onClick={closeMenu}
           style={{ 
             color: '#ffffff', 
@@ -74,7 +74,7 @@ const Navbar = () => {
             transition: 'color 0.3s ease'
           }}
         >
-          פרויקטים
+          חבילות
         </a>
         <Link 
           to="/contact" 

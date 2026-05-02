@@ -59,10 +59,11 @@ const Home = () => {
           fill="#3b82f6"
         />
         
-        <div className="container flex flex-col md:flex-row h-screen items-center" dir="rtl">
+        <div className="flex flex-col md:flex-row h-screen items-center" dir="rtl">
           {/* Right side - Text */}
           <motion.div 
-            className="flex-1 flex flex-col justify-center relative z-10 pt-24 md:pt-0"
+            className="flex-1 flex flex-col justify-center px-8 md:pr-16 md:pl-8 relative z-10 pt-24 md:pt-0"
+            style={{ maxWidth: '650px', marginRight: 'auto', marginLeft: '0' }}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3 }}

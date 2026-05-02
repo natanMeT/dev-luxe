@@ -51,12 +51,12 @@ const Contact = () => {
               lineHeight: 1.1,
               color: '#ffffff'
             }}>
-              בואו נבנה את <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>האימפריה שלכם.</span>
+              בואו נבנה את <span style={{ color: '#3b82f6', fontStyle: 'italic' }}>האימפריה שלכם.</span>
             </h1>
             
             <p style={{ 
               fontSize: '1.2rem', 
-              color: 'rgba(180, 190, 220, 0.8)', 
+              color: 'rgba(148, 163, 184, 0.8)', 
               lineHeight: 1.8,
               marginBottom: '2rem'
             }}>
@@ -89,7 +89,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -10, borderColor: 'rgba(212, 175, 55, 0.5)' }}
+            whileHover={{ y: -10, borderColor: 'rgba(59, 130, 246, 0.5)' }}
             style={{ 
               padding: '4rem 2rem', 
               background: 'var(--color-slate)', 
@@ -104,9 +104,9 @@ const Contact = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            <Mail size={48} color="#d4af37" />
-            <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0 }}>שלחו מייל</h3>
-            <span style={{ color: 'rgba(180, 190, 220, 0.6)' }}>נחזור אליכם בהקדם האפשרי</span>
+            <Mail size={48} color="#3b82f6" />
+            <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0, color: '#ffffff' }}>שלחו מייל</h3>
+            <span style={{ color: 'rgba(148, 163, 184, 0.6)' }}>נחזור אליכם בהקדם האפשרי</span>
           </motion.a>
 
           <motion.a 
@@ -115,7 +115,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            whileHover={{ y: -10, borderColor: 'rgba(45, 122, 237, 0.5)' }}
+            whileHover={{ y: -10, borderColor: 'rgba(96, 165, 250, 0.5)' }}
             style={{ 
               padding: '4rem 2rem', 
               background: 'var(--color-slate)', 
@@ -130,9 +130,9 @@ const Contact = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            <Phone size={48} color="#2d7aed" />
-            <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0 }}>חייגו אלינו</h3>
-            <span style={{ color: 'rgba(180, 190, 220, 0.6)' }}>מעדיפים לדבר? אנחנו זמינים</span>
+            <Phone size={48} color="#60a5fa" />
+            <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0, color: '#ffffff' }}>חייגו אלינו</h3>
+            <span style={{ color: 'rgba(148, 163, 184, 0.6)' }}>מעדיפים לדבר? אנחנו זמינים</span>
           </motion.a>
 
           <motion.a 
@@ -141,7 +141,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            whileHover={{ y: -10, borderColor: 'rgba(0, 212, 170, 0.5)' }}
+            whileHover={{ y: -10, borderColor: 'rgba(37, 99, 235, 0.5)' }}
             style={{ 
               padding: '4rem 2rem', 
               background: 'var(--color-slate)', 
@@ -156,9 +156,9 @@ const Contact = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            <MessageCircle size={48} color="#00d4aa" />
-            <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0 }}>וואטסאפ</h3>
-            <span style={{ color: 'rgba(180, 190, 220, 0.6)' }}>למענה מהיר ונוח התכתבו איתנו</span>
+            <MessageCircle size={48} color="#2563eb" />
+            <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0, color: '#ffffff' }}>וואטסאפ</h3>
+            <span style={{ color: 'rgba(148, 163, 184, 0.6)' }}>למענה מהיר ונוח התכתבו איתנו</span>
           </motion.a>
 
         </div>
@@ -169,14 +169,14 @@ const Contact = () => {
         <div style={{ maxWidth: '800px', margin: '0 auto', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 4rem)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem', color: '#fff' }}>ספרו לנו על הפרויקט שלכם</h2>
-            <p style={{ color: 'rgba(180, 190, 220, 0.6)' }}>מלאו את הפרטים ונחזור אליכם עם אסטרטגיה מדויקת.</p>
+            <p style={{ color: 'rgba(148, 163, 184, 0.6)' }}>מלאו את הפרטים ונחזור אליכם עם אסטרטגיה מדויקת.</p>
           </div>
           
           <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} onSubmit={(e) => e.preventDefault()}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>שם מלא *</label>
-                <input type="text" required style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+                <label style={{ fontSize: '0.9rem', color: 'rgba(148, 163, 184, 0.8)' }}>שם מלא *</label>
+                <input type="text" required style={{ width: '100%', padding: '1rem', background: 'rgba(4, 8, 18, 0.6)', border: '1px solid rgba(59, 130, 246, 0.15)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = '#3b82f6'} onBlur={(e) => e.target.style.borderColor = 'rgba(59, 130, 246, 0.15)'} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>מספר טלפון *</label>
@@ -253,14 +253,14 @@ const Contact = () => {
                     fontWeight: 500
                   }}
                 >
-                  <span style={{ color: isOpen ? 'var(--color-gold)' : '#ffffff', transition: 'color 0.3s' }}>
+                  <span style={{ color: isOpen ? '#3b82f6' : '#ffffff', transition: 'color 0.3s' }}>
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown color={isOpen ? 'var(--color-gold)' : 'rgba(180, 190, 220, 0.6)'} />
+                    <ChevronDown color={isOpen ? '#3b82f6' : 'rgba(148, 163, 184, 0.6)'} />
                   </motion.div>
                 </button>
                 

@@ -8,7 +8,7 @@ const PremiumBackground = () => {
     // Generate static random values for particles on mount
     const generatedParticles = Array.from({ length: 30 }).map((_, i) => {
       // Mix of emerald and gold particles
-      const isEmerald = Math.random() > 0.7;
+      const isLight = Math.random() > 0.7;
       return {
         id: i,
         left: `${Math.random() * 100}%`,
@@ -16,7 +16,7 @@ const PremiumBackground = () => {
         size: `${Math.random() * 3 + 1}px`,
         duration: `${Math.random() * 10 + 10}s`, // 10s to 20s
         delay: `${Math.random() * 10}s`,
-        color: isEmerald ? '#00d4aa' : '#d4af37',
+        color: isLight ? '#60a5fa' : '#3b82f6',
         opacity: Math.random() * 0.5 + 0.1
       };
     });

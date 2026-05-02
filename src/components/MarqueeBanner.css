@@ -2,13 +2,13 @@
   position: relative;
   overflow: hidden;
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-top: 1px solid rgba(59, 130, 246, 0.12);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.12);
   background: linear-gradient(90deg, 
-    rgba(15, 58, 40, 0.05), 
-    rgba(45, 122, 237, 0.05), 
-    rgba(0, 212, 170, 0.03),
-    rgba(15, 58, 40, 0.05)
+    rgba(30, 58, 138, 0.05), 
+    rgba(59, 130, 246, 0.04), 
+    rgba(37, 99, 235, 0.03),
+    rgba(30, 58, 138, 0.05)
   );
   direction: ltr;
 }
@@ -20,7 +20,7 @@
   transform: translate(-50%, -50%);
   width: 600px;
   height: 100px;
-  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
   filter: blur(30px);
   pointer-events: none;
 }
@@ -49,7 +49,7 @@
 }
 
 .marquee-dot {
-  color: #d4af37;
+  color: #3b82f6;
   font-size: 0.6rem;
   margin: 0 1.5rem;
   opacity: 0.8;
@@ -78,10 +78,10 @@
 
 .marquee-section::before {
   left: 0;
-  background: linear-gradient(to right, #050505 0%, transparent 100%);
+  background: linear-gradient(to right, #040812 0%, transparent 100%);
 }
 
 .marquee-section::after {
   right: 0;
-  background: linear-gradient(to left, #050505 0%, transparent 100%);
+  background: linear-gradient(to left, #040812 0%, transparent 100%);
 }

@@ -19,9 +19,9 @@ const Navbar = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
       zIndex: 1000,
-      background: 'rgba(5, 15, 20, 0.8)',
-      backdropFilter: 'blur(10px)',
-      borderBottom: '1px solid rgba(255,255,255,0.05)',
+      background: 'rgba(4, 8, 18, 0.85)',
+      backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid rgba(59, 130, 246, 0.06)',
       direction: 'rtl'
     }}>
       <div style={{
@@ -44,7 +44,7 @@ const Navbar = () => {
           to="/" 
           onClick={closeMenu}
           style={{ 
-            color: location.pathname === '/' ? '#d4af37' : '#ffffff', 
+            color: location.pathname === '/' ? '#3b82f6' : 'rgba(255, 255, 255, 0.8)', 
             textDecoration: 'none',
             fontSize: '1.1rem',
             transition: 'color 0.3s ease'
@@ -56,7 +56,7 @@ const Navbar = () => {
           to="/about" 
           onClick={closeMenu}
           style={{ 
-            color: location.pathname === '/about' ? '#d4af37' : '#ffffff', 
+            color: location.pathname === '/about' ? '#3b82f6' : 'rgba(255, 255, 255, 0.8)', 
             textDecoration: 'none',
             fontSize: '1.1rem',
             transition: 'color 0.3s ease'
@@ -68,7 +68,7 @@ const Navbar = () => {
           href="/#pricing" 
           onClick={closeMenu}
           style={{ 
-            color: '#ffffff', 
+            color: 'rgba(255, 255, 255, 0.8)', 
             textDecoration: 'none',
             fontSize: '1.1rem',
             transition: 'color 0.3s ease'
@@ -80,7 +80,7 @@ const Navbar = () => {
           to="/contact" 
           onClick={closeMenu}
           style={{ 
-            color: location.pathname === '/contact' ? '#d4af37' : '#ffffff', 
+            color: location.pathname === '/contact' ? '#3b82f6' : 'rgba(255, 255, 255, 0.8)', 
             textDecoration: 'none',
             fontSize: '1.1rem',
             transition: 'color 0.3s ease'

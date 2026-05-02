@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Zap, Crown } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SplineScene } from '@/components/ui/splite';
 import { Spotlight } from '@/components/ui/spotlight';
@@ -21,7 +21,6 @@ const Home = () => {
         'תשתית SEO בסיסית',
         'אחסון מאובטח וחיבור לדומיין'
       ],
-      color: 'rgba(180, 190, 220, 0.7)'
     },
     {
       name: 'Signature',
@@ -34,7 +33,6 @@ const Home = () => {
         'אינטגרציית מנוע לידים אישי',
         'אופטימיזציית מהירות ברמת פרימיום'
       ],
-      color: '#d4af37',
       popular: true
     },
     {
@@ -48,7 +46,6 @@ const Home = () => {
         'דשבורד ביצועים ואנליטיקה עסקי',
         'אוטומציות לידים מתקדמות (Make/Zapier)'
       ],
-      color: '#ffffff'
     }
   ];
   
@@ -56,10 +53,10 @@ const Home = () => {
     <div className="portfolio-wrapper" dir="rtl">
       
       {/* ===== HERO — Spline 3D Split ===== */}
-      <header className="relative min-h-screen w-full overflow-hidden" style={{ background: 'black' }}>
+      <header className="relative min-h-screen w-full overflow-hidden" style={{ background: '#040812' }}>
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="white"
+          fill="#3b82f6"
         />
         
         <div className="flex flex-col md:flex-row h-screen items-center" dir="rtl">
@@ -71,19 +68,19 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400"
+              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500"
               style={{ fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.1 }}
             >
               Think Big
             </h1>
             <h2 
               className="mt-3 text-lg md:text-xl tracking-[6px] uppercase"
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: 'var(--color-gold)' }}
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: '#3b82f6' }}
             >
               Flux Studio
             </h2>
 
-            <p className="mt-6 text-base md:text-lg max-w-xl leading-relaxed" style={{ color: 'rgba(180, 190, 220, 0.8)' }}>
+            <p className="mt-6 text-base md:text-lg max-w-xl leading-relaxed" style={{ color: 'rgba(148, 163, 184, 0.85)' }}>
               אנחנו לא רק בונים אתרים. אנחנו יוצרים חוויות יוקרה סינמטיות שממירות מבקרים ללקוחות משלמים.
             </p>
 
@@ -115,7 +112,7 @@ const Home = () => {
       <section className="section container" style={{ padding: '8rem 0' }}>
         <div className="text-center" style={{ marginBottom: '5rem' }}>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem', color: '#ffffff', fontFamily: "'Cormorant Garamond', serif" }}>התהליך שלנו</h2>
-          <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '1.1rem' }}>כך אנחנו בונים אימפריה דיגיטלית מאפס</p>
+          <p style={{ color: 'rgba(148, 163, 184, 0.6)', fontSize: '1.1rem' }}>כך אנחנו בונים אימפריה דיגיטלית מאפס</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
           {[
@@ -133,9 +130,9 @@ const Home = () => {
               className="glass"
               style={{ padding: '2rem' }}
             >
-              <div style={{ fontSize: '2.5rem', color: 'var(--color-gold)', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem' }}>{item.step}</div>
+              <div style={{ fontSize: '2.5rem', color: '#3b82f6', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem' }}>{item.step}</div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>{item.title}</h3>
-              <p style={{ color: 'rgba(180, 190, 220, 0.7)', fontSize: '0.9rem', lineHeight: 1.6 }}>{item.desc}</p>
+              <p style={{ color: 'rgba(148, 163, 184, 0.7)', fontSize: '0.9rem', lineHeight: 1.6 }}>{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -143,10 +140,10 @@ const Home = () => {
 
       {/* ===== Why It Works ===== */}
       <section className="section container" style={{ padding: '4rem 0 8rem' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 5rem)', borderRadius: '30px', border: '1px solid rgba(212, 175, 55, 0.1)' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 5rem)', borderRadius: '30px', border: '1px solid rgba(59, 130, 246, 0.1)' }}>
           <div style={{ flex: 1 }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1.5rem', color: '#ffffff', fontFamily: "'Cormorant Garamond', serif" }}>למה השיטה שלנו עובדת?</h2>
-            <p style={{ color: 'rgba(180, 190, 220, 0.8)', fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+            <p style={{ color: 'rgba(148, 163, 184, 0.8)', fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '2rem' }}>
               בעידן שבו כולם משתמשים באותן תבניות, עיצוב פרימיום הוא הדרך היחידה לבלוט. כשאנחנו בונים אתר עם חוויה סינמטית, אנחנו לא רק גורמים לו להיראות יפה – אנחנו משנים את הפסיכולוגיה של הלקוח.
             </p>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -156,8 +153,8 @@ const Home = () => {
                 'מגדיל משמעותית את אחוזי ההמרה מלידים ללקוחות',
                 'משאיר רושם בלתי נשכח מול המתחרים'
               ].map((benefit, idx) => (
-                <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'rgba(180, 190, 220, 0.9)' }}>
-                  <Check size={20} color="#00d4aa" />
+                <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'rgba(148, 163, 184, 0.9)' }}>
+                  <Check size={20} color="#3b82f6" />
                   {benefit}
                 </li>
               ))}
@@ -186,7 +183,7 @@ const Home = () => {
               style={{ 
                 padding: '3rem', 
                 textAlign: 'right', 
-                border: pkg.popular ? 'none' : '1px solid rgba(255,255,255,0.05)',
+                border: pkg.popular ? 'none' : '1px solid rgba(59, 130, 246, 0.08)',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
@@ -194,19 +191,19 @@ const Home = () => {
               }}
             >
               {pkg.popular && (
-                <span style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: '#f1d592', color: '#050505', padding: '0.3rem 1.5rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 'bold' }}>הכי נכון לרוב העסקים</span>
+                <span style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', background: 'linear-gradient(135deg, #2563eb, #1e3a8a)', color: '#ffffff', padding: '0.3rem 1.5rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 'bold' }}>הכי נכון לרוב העסקים</span>
               )}
               
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: '#ffffff', fontFamily: "var(--font-main)", fontWeight: 600, letterSpacing: '1px' }}>{pkg.name}</h3>
-              <div style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", color: 'var(--color-gold)', marginBottom: '1rem' }}>{pkg.price}</div>
-              <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '0.95rem', marginBottom: '2.5rem', textAlign: 'center', lineHeight: 1.6, minHeight: '45px' }}>
+              <div style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", color: '#3b82f6', marginBottom: '1rem' }}>{pkg.price}</div>
+              <p style={{ color: 'rgba(148, 163, 184, 0.6)', fontSize: '0.95rem', marginBottom: '2.5rem', textAlign: 'center', lineHeight: 1.6, minHeight: '45px' }}>
                 {pkg.description}
               </p>
               
               <ul style={{ width: '100%', padding: 0, margin: 0 }}>
                 {pkg.features.map((feature, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.75rem', marginBottom: '1rem', fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.9)' }}>
-                    <Check size={16} color="#00d4aa" style={{ flexShrink: 0 }} />
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.75rem', marginBottom: '1rem', fontSize: '0.9rem', color: 'rgba(148, 163, 184, 0.9)' }}>
+                    <Check size={16} color="#3b82f6" style={{ flexShrink: 0 }} />
                     {feature}
                   </li>
                 ))}
@@ -216,10 +213,10 @@ const Home = () => {
         </div>
 
         {/* Premium Add-ons */}
-        <div style={{ marginTop: '5rem', paddingTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+        <div style={{ marginTop: '5rem', paddingTop: '4rem', borderTop: '1px solid rgba(59, 130, 246, 0.08)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
           <div style={{ textAlign: 'right', gridColumn: '1 / -1', marginBottom: '1rem' }}>
             <h3 style={{ fontSize: '1.8rem', color: '#ffffff', fontFamily: "var(--font-main)", fontWeight: 300 }}>שדרוגי קצה (Add-ons)</h3>
-            <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '1rem' }}>תוספות פרימיום למותגים שדורשים שלמות טכנולוגית ללא פשרות.</p>
+            <p style={{ color: 'rgba(148, 163, 184, 0.6)', fontSize: '1rem' }}>תוספות פרימיום למותגים שדורשים שלמות טכנולוגית ללא פשרות.</p>
           </div>
           
           {[
@@ -234,10 +231,10 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 + idx * 0.1 }}
-              style={{ background: 'rgba(255,255,255,0.02)', padding: '2rem', borderRadius: '15px', border: '1px solid rgba(212, 175, 55, 0.1)' }}
+              style={{ background: 'rgba(59, 130, 246, 0.03)', padding: '2rem', borderRadius: '15px', border: '1px solid rgba(59, 130, 246, 0.1)' }}
             >
-              <h4 style={{ color: 'var(--color-gold)', fontSize: '1.1rem', marginBottom: '0.8rem', fontFamily: "var(--font-main)" }}>+ {addon.title}</h4>
-              <p style={{ color: 'rgba(180, 190, 220, 0.8)', fontSize: '0.85rem', lineHeight: 1.6 }}>{addon.desc}</p>
+              <h4 style={{ color: '#60a5fa', fontSize: '1.1rem', marginBottom: '0.8rem', fontFamily: "var(--font-main)" }}>+ {addon.title}</h4>
+              <p style={{ color: 'rgba(148, 163, 184, 0.8)', fontSize: '0.85rem', lineHeight: 1.6 }}>{addon.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -257,14 +254,14 @@ const Home = () => {
             borderRadius: '30px', 
             padding: '5rem 2rem', 
             textAlign: 'center',
-            border: '1px solid rgba(255,255,255,0.05)',
+            border: '1px solid rgba(59, 130, 246, 0.1)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             gap: '2rem'
           }}
         >
-          <span style={{ color: 'var(--color-gold)', letterSpacing: '3px', fontSize: '0.85rem', fontWeight: 600 }}>READY WHEN YOU ARE</span>
+          <span style={{ color: '#3b82f6', letterSpacing: '3px', fontSize: '0.85rem', fontWeight: 600 }}>READY WHEN YOU ARE</span>
           <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff', maxWidth: '800px', lineHeight: 1.1 }}>
             יש לך עסק שצריך להיראות יקר יותר? זה בדיוק המקום להתחיל.
           </h2>

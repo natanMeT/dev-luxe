@@ -4,7 +4,7 @@ import { Check, Globe, Zap, Crown, Mail, Phone, MessageCircle } from 'lucide-rea
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import '../index.css';
-import EarthGlobe from '../components/EarthGlobe';
+import WovenCanvas from '../components/WovenCanvas';
 import MarqueeBanner from '../components/MarqueeBanner';
 import GradientBlob from '../components/GradientBlob';
 import ProjectsCarousel from '../components/ProjectsCarousel';
@@ -59,7 +59,7 @@ const Home = () => {
       {/* Hero Section */}
       <header className="hero-split" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', textAlign: 'center' }}>
         <div className="hero-cube-wrapper">
-          <EarthGlobe />
+          <WovenCanvas />
         </div>
         <motion.div
           className="hero-text-content"

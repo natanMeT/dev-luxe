@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SplineScene } from '@/components/ui/splite';
-import { Spotlight } from '@/components/ui/spotlight';
+import { SilkBackground } from '@/components/ui/silk-background';
 import MarqueeBanner from '../components/MarqueeBanner';
 import GradientBlob from '../components/GradientBlob';
 
@@ -49,40 +48,34 @@ const Home = () => {
     }
   ];
   
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => { const t = setTimeout(() => setIsLoaded(true), 300); return () => clearTimeout(t); }, []);
+
   return (
     <div className="portfolio-wrapper" dir="rtl">
       
-      {/* ===== HERO ===== */}
-      <header className="relative min-h-screen w-full overflow-hidden" style={{ background: '#000' }}>
-        <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
+      {/* ===== HERO — Silk Background ===== */}
+      <header className="relative h-screen w-full overflow-hidden" style={{ background: '#000' }}>
+        <SilkBackground />
+        <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2), transparent 40%, rgba(0,0,0,0.4))' }} />
         
-        <div className="flex flex-col md:flex-row h-screen items-center" dir="rtl">
-          <motion.div 
-            className="flex-1 flex flex-col justify-center px-8 md:pr-16 md:pl-8 relative z-10 pt-24 md:pt-0"
-            style={{ maxWidth: '650px', marginRight: 'auto', marginLeft: '0' }}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500"
-              style={{ fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.1 }}
+        <div className="relative z-20 flex h-full items-center justify-center">
+          <div className="text-center px-8">
+            <motion.h1
+              className="font-light tracking-[-0.05em] leading-none text-white"
+              style={{ 
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: 'clamp(4rem, 15vw, 14rem)',
+                textShadow: '0 0 60px rgba(255, 255, 255, 0.08)',
+                mixBlendMode: 'difference',
+                opacity: isLoaded ? 1 : 0,
+                transform: isLoaded ? 'translateY(0)' : 'translateY(2rem)',
+                transition: 'all 1s ease-out'
+              }}
             >
               Think Big
-            </h1>
-          </motion.div>
-
-          <motion.div 
-            className="flex-1 relative h-[50vh] md:h-full w-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-          >
-            <SplineScene 
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-            />
-          </motion.div>
+            </motion.h1>
+          </div>
         </div>
       </header>
 

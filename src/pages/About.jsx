@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { BackgroundPaths } from '@/components/ui/background-paths';
 
 const About = () => {
   useEffect(() => {
@@ -7,46 +9,54 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-wrapper" dir="rtl" style={{ minHeight: '100vh', paddingTop: '100px', color: '#ffffff' }}>
+    <div className="about-wrapper" dir="rtl">
       
-      {/* Hero Section */}
-      <section className="container" style={{ padding: '8rem 0 4rem', textAlign: 'center' }}>
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          style={{ 
-            fontSize: 'clamp(3rem, 6vw, 6rem)', 
-            fontFamily: "'Cormorant Garamond', serif", 
-            fontWeight: 300,
-            marginBottom: '2rem',
-            lineHeight: 1.1,
-            color: '#ffffff'
-          }}
-        >
-          אנחנו לא בונים אתרים.<br />
-          <span style={{ color: '#3b82f6', fontStyle: 'italic' }}>אנחנו בונים אימפריות דיגיטליות.</span>
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          style={{ 
-            fontSize: '1.5rem', 
-            color: 'rgba(148, 163, 184, 0.8)', 
-            maxWidth: '700px', 
-            margin: '0 auto', 
-            lineHeight: 1.8 
-          }}
-        >
-          בעולם שבו רוב העסקים מסתפקים בנוכחות בינונית, אנחנו מאמינים שנוכחות דיגיטלית צריכה להיות חוויה סינמטית. המטרה שלנו היא לא רק להציג מידע, אלא לייצר רגש, לבנות יוקרה, ולהמיר מבקרים ללקוחות משלמים.
-        </motion.p>
-      </section>
+      {/* ===== Hero with Animated Paths ===== */}
+      <BackgroundPaths title="Flux Studio">
+        <p style={{ 
+          fontSize: '1.4rem', 
+          color: 'rgba(148, 163, 184, 0.8)', 
+          maxWidth: '650px', 
+          margin: '0 auto 2.5rem', 
+          lineHeight: 1.8,
+          direction: 'rtl'
+        }}>
+          אנחנו לא בונים אתרים. אנחנו בונים אימפריות דיגיטליות.
+        </p>
 
-      {/* The Standard (4 Columns) */}
+        <Link
+          to="/contact"
+          className="inline-block group relative rounded-2xl overflow-hidden"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(59,130,246,0.15), rgba(4,8,18,0.15))',
+            padding: '1px',
+            backdropFilter: 'blur(16px)',
+          }}
+        >
+          <span
+            className="block rounded-[0.95rem] px-8 py-4 text-lg font-semibold transition-all duration-300"
+            style={{
+              background: 'rgba(4, 8, 18, 0.95)',
+              color: '#ffffff',
+              border: '1px solid rgba(59, 130, 246, 0.1)',
+            }}
+          >
+            <span style={{ opacity: 0.9 }}>בואו נדבר</span>
+            <span style={{ marginRight: '12px', opacity: 0.7 }}>←</span>
+          </span>
+        </Link>
+      </BackgroundPaths>
+
+      {/* ===== The Standard (4 Columns) ===== */}
       <section className="container" style={{ padding: '10rem 0' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem', color: '#ffffff', fontFamily: "'Cormorant Garamond', serif" }}>
+            מה מבדיל אותנו
+          </h2>
+          <p style={{ color: 'rgba(148, 163, 184, 0.6)', fontSize: '1.1rem' }}>ארבעת העמודים של הגישה שלנו</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           
           <motion.div 
             className="animated-border"
@@ -56,7 +66,8 @@ const About = () => {
             transition={{ duration: 0.8 }}
             style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', '--animated-color': '#3b82f6' }}
           >
-            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>01. חוויה סינמטית</h3>
+            <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🎬</div>
+            <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>חוויה סינמטית</h3>
             <p style={{ color: 'rgba(148, 163, 184, 0.7)', lineHeight: 1.8 }}>
               אנחנו מתייחסים לכל אתר כמו להפקת סרט פרימיום. התנועה, האנימציות, והזרימה של העמוד מתוכננים כדי להשאיר את המבקרים מהופנטים למסך.
             </p>
@@ -67,10 +78,11 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
             style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', '--animated-color': '#60a5fa' }}
           >
-            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>02. יוקרה ללא פשרות</h3>
+            <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>💎</div>
+            <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>יוקרה ללא פשרות</h3>
             <p style={{ color: 'rgba(148, 163, 184, 0.7)', lineHeight: 1.8 }}>
               כל פיקסל נבחר בקפידה. אנחנו משתמשים בפלטות צבעים יוקרתיות, טיפוגרפיה ברמה בינלאומית, ופרופורציות שמייצרות תחושת אקסקלוסיביות.
             </p>
@@ -81,10 +93,11 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', '--animated-color': '#2563eb' }}
           >
-            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>03. טכנולוגיה ותלת-מימד</h3>
+            <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🧊</div>
+            <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>טכנולוגיה ותלת-מימד</h3>
             <p style={{ color: 'rgba(148, 163, 184, 0.7)', lineHeight: 1.8 }}>
               מאחורי העיצוב המרהיב פועלת טכנולוגיה מתקדמת. אנחנו מומחים בבניית אתרי תלת-מימד (3D Websites) באמצעות WebGL ו-React, ומחברים הכל למערכות חכמות.
             </p>
@@ -95,20 +108,21 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
             style={{ padding: '3rem', background: 'var(--color-slate)', borderRadius: '20px', '--animated-color': '#93c5fd' }}
           >
-            <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>04. הפקת תוכן ו-AI</h3>
+            <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🤖</div>
+            <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem', fontFamily: "'Cormorant Garamond', serif", color: '#ffffff' }}>הפקת תוכן ו-AI</h3>
             <p style={{ color: 'rgba(148, 163, 184, 0.7)', lineHeight: 1.8 }}>
-              אנחנו מספקים מעטפת קריאייטיב מלאה: הפקת סרטונים שיווקיים ותוכן ויזואלי מהפנט באמצעות טכנולוגיות הבינה המלאכותית (AI) המתקדמות בעולם, כדי לייצר קמפיינים ונוכחות מדיה שאי אפשר להתעלם מהם.
+              אנחנו מספקים מעטפת קריאייטיב מלאה: הפקת סרטונים שיווקיים ותוכן ויזואלי מהפנט באמצעות טכנולוגיות הבינה המלאכותית (AI) המתקדמות בעולם.
             </p>
           </motion.div>
 
         </div>
       </section>
 
-      {/* Manifesto */}
-      <section className="container" style={{ padding: '5rem 0 10rem', textAlign: 'center' }}>
+      {/* ===== Manifesto ===== */}
+      <section className="container" style={{ padding: '0 0 10rem', textAlign: 'center' }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}

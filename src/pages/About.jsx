@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { BackgroundPaths } from '@/components/ui/background-paths';
+import { BeamsBackground } from '@/components/ui/beams-background';
 
 const About = () => {
   useEffect(() => {
@@ -11,41 +11,60 @@ const About = () => {
   return (
     <div className="about-wrapper" dir="rtl">
       
-      {/* ===== Hero with Animated Paths ===== */}
-      <BackgroundPaths title="Flux Studio">
-        <p style={{ 
-          fontSize: '1.4rem', 
-          color: 'rgba(148, 163, 184, 0.8)', 
-          maxWidth: '650px', 
-          margin: '0 auto 2.5rem', 
-          lineHeight: 1.8,
-          direction: 'rtl'
-        }}>
-          אנחנו לא בונים אתרים. אנחנו בונים אימפריות דיגיטליות.
-        </p>
-
-        <Link
-          to="/contact"
-          className="inline-block group relative rounded-2xl overflow-hidden"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(59,130,246,0.15), rgba(4,8,18,0.15))',
-            padding: '1px',
-            backdropFilter: 'blur(16px)',
-          }}
-        >
-          <span
-            className="block rounded-[0.95rem] px-8 py-4 text-lg font-semibold transition-all duration-300"
-            style={{
-              background: 'rgba(4, 8, 18, 0.95)',
-              color: '#ffffff',
-              border: '1px solid rgba(59, 130, 246, 0.1)',
-            }}
+      {/* ===== Hero with Beams ===== */}
+      <BeamsBackground intensity="strong">
+        <div className="flex flex-col items-center justify-center gap-6 px-4 text-center">
+          <motion.h1
+            className="text-5xl sm:text-7xl md:text-8xl font-bold text-white tracking-tighter"
+            style={{ fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
           >
-            <span style={{ opacity: 0.9 }}>בואו נדבר</span>
-            <span style={{ marginRight: '12px', opacity: 0.7 }}>←</span>
-          </span>
-        </Link>
-      </BackgroundPaths>
+            אנחנו לא בונים אתרים.
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+              אנחנו בונים אימפריות.
+            </span>
+          </motion.h1>
+          
+          <motion.p
+            className="text-lg md:text-xl max-w-2xl leading-relaxed"
+            style={{ color: 'rgba(148, 163, 184, 0.8)', direction: 'rtl' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            בעולם שבו רוב העסקים מסתפקים בנוכחות בינונית, אנחנו מאמינים שנוכחות דיגיטלית צריכה להיות חוויה סינמטית.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            <Link
+              to="/contact"
+              className="inline-block rounded-2xl overflow-hidden"
+              style={{
+                background: 'linear-gradient(to bottom, rgba(59,130,246,0.15), rgba(4,8,18,0.15))',
+                padding: '1px',
+              }}
+            >
+              <span
+                className="block rounded-[0.95rem] px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'rgba(4, 8, 18, 0.9)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(59, 130, 246, 0.15)',
+                }}
+              >
+                בואו נדבר ←
+              </span>
+            </Link>
+          </motion.div>
+        </div>
+      </BeamsBackground>
 
       {/* ===== The Standard (4 Columns) ===== */}
       <section className="container" style={{ padding: '10rem 0' }}>

@@ -11,7 +11,7 @@ const Home = () => {
   const packages = [
     {
       name: 'Launch',
-      price: 'מ-1,900 ₪',
+      price: 'מ-1,200 ₪',
       description: 'נקודת פתיחה מדויקת ומהירה לעסק שרוצה להיראות מעולה מהיום הראשון.',
       features: [
         'עיצוב נקי ומוקפד (One Page)',
@@ -23,7 +23,7 @@ const Home = () => {
     },
     {
       name: 'Signature',
-      price: 'מ-4,500 ₪',
+      price: 'מ-2,900 ₪',
       description: 'מערכת דיגיטלית מלאה למותגים. עיצוב פרסונלי, חוויה חלקה ויכולות ניהול.',
       features: [
         'אפיון וחווית משתמש מלאה (UX/UI)',
@@ -36,7 +36,7 @@ const Home = () => {
     },
     {
       name: 'Cinematic',
-      price: 'מ-8,500 ₪',
+      price: 'מ-5,500 ₪',
       description: 'הסטנדרט הגבוה ביותר בשוק. חוויה אינטראקטיבית שוברת מוסכמות מבוססת AI.',
       features: [
         'חווית גלילה קולנועית (Scroll-Telling)',

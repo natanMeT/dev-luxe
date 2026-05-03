@@ -51,12 +51,12 @@ const Contact = () => {
               lineHeight: 1.1,
               color: '#ffffff'
             }}>
-              בואו נבנה את <span style={{ color: '#3b82f6', fontStyle: 'italic' }}>האימפריה שלכם.</span>
+              בואו נבנה את <span style={{ color: 'rgba(255,255,255,0.5)', fontStyle: 'italic' }}>האימפריה שלכם.</span>
             </h1>
             
             <p style={{ 
               fontSize: '1.2rem', 
-              color: 'rgba(148, 163, 184, 0.8)', 
+              color: 'rgba(255,255,255,0.5)', 
               lineHeight: 1.8,
               marginBottom: '2rem'
             }}>
@@ -89,7 +89,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -10, borderColor: 'rgba(59, 130, 246, 0.5)' }}
+            whileHover={{ y: -10, borderColor: 'rgba(255,255,255,0.2)' }}
             style={{ 
               padding: '4rem 2rem', 
               background: 'var(--color-slate)', 
@@ -104,9 +104,9 @@ const Contact = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            <Mail size={48} color="#3b82f6" />
+            <Mail size={48} color="rgba(255,255,255,0.5)" />
             <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0, color: '#ffffff' }}>שלחו מייל</h3>
-            <span style={{ color: 'rgba(148, 163, 184, 0.6)' }}>נחזור אליכם בהקדם האפשרי</span>
+            <span style={{ color: 'rgba(255,255,255,0.4)' }}>נחזור אליכם בהקדם האפשרי</span>
           </motion.a>
 
           <motion.a 
@@ -115,7 +115,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            whileHover={{ y: -10, borderColor: 'rgba(96, 165, 250, 0.5)' }}
+            whileHover={{ y: -10, borderColor: 'rgba(255,255,255,0.2)' }}
             style={{ 
               padding: '4rem 2rem', 
               background: 'var(--color-slate)', 
@@ -130,9 +130,9 @@ const Contact = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            <Phone size={48} color="#60a5fa" />
+            <Phone size={48} color="rgba(255,255,255,0.5)" />
             <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0, color: '#ffffff' }}>חייגו אלינו</h3>
-            <span style={{ color: 'rgba(148, 163, 184, 0.6)' }}>מעדיפים לדבר? אנחנו זמינים</span>
+            <span style={{ color: 'rgba(255,255,255,0.4)' }}>מעדיפים לדבר? אנחנו זמינים</span>
           </motion.a>
 
           <motion.a 
@@ -141,7 +141,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            whileHover={{ y: -10, borderColor: 'rgba(37, 99, 235, 0.5)' }}
+            whileHover={{ y: -10, borderColor: 'rgba(255,255,255,0.2)' }}
             style={{ 
               padding: '4rem 2rem', 
               background: 'var(--color-slate)', 
@@ -156,9 +156,9 @@ const Contact = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            <MessageCircle size={48} color="#2563eb" />
+            <MessageCircle size={48} color="rgba(255,255,255,0.5)" />
             <h3 style={{ fontSize: '1.8rem', fontFamily: "'Cormorant Garamond', serif", margin: 0, color: '#ffffff' }}>וואטסאפ</h3>
-            <span style={{ color: 'rgba(148, 163, 184, 0.6)' }}>למענה מהיר ונוח התכתבו איתנו</span>
+            <span style={{ color: 'rgba(255,255,255,0.4)' }}>למענה מהיר ונוח התכתבו איתנו</span>
           </motion.a>
 
         </div>
@@ -169,35 +169,35 @@ const Contact = () => {
         <div style={{ maxWidth: '800px', margin: '0 auto', background: 'var(--color-slate)', padding: 'clamp(2rem, 5vw, 4rem)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '2.5rem', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem', color: '#fff' }}>ספרו לנו על הפרויקט שלכם</h2>
-            <p style={{ color: 'rgba(148, 163, 184, 0.6)' }}>מלאו את הפרטים ונחזור אליכם עם אסטרטגיה מדויקת.</p>
+            <p style={{ color: 'rgba(255,255,255,0.4)' }}>מלאו את הפרטים ונחזור אליכם עם אסטרטגיה מדויקת.</p>
           </div>
           
           <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} onSubmit={(e) => e.preventDefault()}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'rgba(148, 163, 184, 0.8)' }}>שם מלא *</label>
-                <input type="text" required style={{ width: '100%', padding: '1rem', background: 'rgba(4, 8, 18, 0.6)', border: '1px solid rgba(59, 130, 246, 0.15)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = '#3b82f6'} onBlur={(e) => e.target.style.borderColor = 'rgba(59, 130, 246, 0.15)'} />
+                <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>שם מלא *</label>
+                <input type="text" required style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.4)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>מספר טלפון *</label>
-                <input type="tel" required style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+                <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>מספר טלפון *</label>
+                <input type="tel" required style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.4)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
               </div>
             </div>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>סוג העסק</label>
-                <input type="text" placeholder="לדוגמה: עריכת דין, נדל״ן, איקומרס" style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+                <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>סוג העסק</label>
+                <input type="text" placeholder="לדוגמה: עריכת דין, נדל״ן, איקומרס" style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.4)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>סוג הפרויקט</label>
-                <input type="text" placeholder="לדוגמה: אתר תדמית 3D, חנות וירטואלית" style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
+                <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>סוג הפרויקט</label>
+                <input type="text" placeholder="לדוגמה: אתר תדמית 3D, חנות וירטואלית" style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.4)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'} />
               </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>טווח תקציב משוער</label>
-              <select style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s', cursor: 'pointer', appearance: 'none' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}>
+              <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>טווח תקציב משוער</label>
+              <select style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s', cursor: 'pointer', appearance: 'none' }} onFocus={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.4)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}>
                 <option value="not_sure">טרם הוחלט</option>
                 <option value="1500-4000">1,500 ₪ - 4,000 ₪ (בסיסי)</option>
                 <option value="4000-8000">4,000 ₪ - 8,000 ₪ (מתקדם)</option>
@@ -206,8 +206,8 @@ const Contact = () => {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.9rem', color: 'rgba(180, 190, 220, 0.8)' }}>ספרו לנו קצת על החזון שלכם</label>
-              <textarea rows="4" style={{ width: '100%', padding: '1rem', background: 'rgba(25, 25, 30, 0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s', resize: 'vertical' }} onFocus={(e) => e.target.style.borderColor = 'var(--color-gold)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}></textarea>
+              <label style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>ספרו לנו קצת על החזון שלכם</label>
+              <textarea rows="4" style={{ width: '100%', padding: '1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', color: '#fff', outline: 'none', transition: 'border-color 0.3s', resize: 'vertical' }} onFocus={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.4)'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.1)'}></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem', padding: '1.2rem', fontSize: '1.1rem' }}>שליחת פנייה</button>
@@ -219,7 +219,7 @@ const Contact = () => {
       <section className="container" style={{ padding: '4rem 0 10rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '3rem', fontFamily: "'Cormorant Garamond', serif", marginBottom: '1rem' }}>שאלות נפוצות</h2>
-          <p style={{ color: 'rgba(180, 190, 220, 0.6)', fontSize: '1.1rem' }}>כל מה שרציתם לדעת על תהליך העבודה איתנו</p>
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.1rem' }}>כל מה שרציתם לדעת על תהליך העבודה איתנו</p>
         </div>
 
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -253,14 +253,14 @@ const Contact = () => {
                     fontWeight: 500
                   }}
                 >
-                  <span style={{ color: isOpen ? '#3b82f6' : '#ffffff', transition: 'color 0.3s' }}>
+                  <span style={{ color: isOpen ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.7)', transition: 'color 0.3s' }}>
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown color={isOpen ? '#3b82f6' : 'rgba(148, 163, 184, 0.6)'} />
+                    <ChevronDown color={isOpen ? '#ffffff' : 'rgba(255,255,255,0.3)'} />
                   </motion.div>
                 </button>
                 
@@ -275,7 +275,7 @@ const Contact = () => {
                     >
                       <div style={{ 
                         padding: '0 2rem 2rem', 
-                        color: 'rgba(180, 190, 220, 0.8)', 
+                        color: 'rgba(255,255,255,0.5)', 
                         lineHeight: 1.8,
                         fontSize: '1.1rem' 
                       }}>

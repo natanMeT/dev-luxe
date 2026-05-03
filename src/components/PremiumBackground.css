@@ -1,88 +1,9 @@
-.premium-bg-wrapper {
-  position: fixed;
-  inset: 0;
-  z-index: -10;
-  overflow: hidden;
-  pointer-events: none;
-  background-color: #040812;
-}
-
-.bg-gradients {
-  position: absolute;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.3) 0%, transparent 40%),
-    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 50% 100%, rgba(12, 20, 37, 0.5) 0%, transparent 60%),
-    linear-gradient(135deg, rgba(4,8,18,1) 0%, rgba(8,12,24,1) 100%);
-  opacity: 0.8;
-}
-
-.bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-}
-
-.bg-noise {
-  position: absolute;
-  inset: 0;
-  opacity: 0.25;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-.bg-sweep {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to bottom right,
-    transparent 45%,
-    rgba(59, 130, 246, 0.02) 50%,
-    transparent 55%
-  );
-  animation: sweep 15s linear infinite;
-}
-
-@keyframes sweep {
-  0% { transform: translateY(-50%) translateX(-50%) rotate(30deg); }
-  100% { transform: translateY(50%) translateX(50%) rotate(30deg); }
-}
-
-.bg-particles {
-  position: absolute;
-  inset: 0;
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  background: #3b82f6;
-  opacity: 0;
-  animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(100px) scale(0.5);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-200px) scale(1.2);
-    opacity: 0;
-  }
-}
+.premium-bg-wrapper { position: fixed; inset: 0; z-index: -10; overflow: hidden; pointer-events: none; background-color: #000; }
+.bg-gradients { position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.02) 0%, transparent 40%), radial-gradient(circle at 20% 50%, rgba(255,255,255,0.01) 0%, transparent 45%), linear-gradient(135deg, #000 0%, #050505 100%); opacity: 0.8; }
+.bg-grid { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(circle at center, black 40%, transparent 100%); -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%); }
+.bg-noise { position: absolute; inset: 0; opacity: 0.25; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+.bg-sweep { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to bottom right, transparent 45%, rgba(255,255,255,0.01) 50%, transparent 55%); animation: sweep 15s linear infinite; }
+@keyframes sweep { 0% { transform: translateY(-50%) translateX(-50%) rotate(30deg); } 100% { transform: translateY(50%) translateX(50%) rotate(30deg); } }
+.bg-particles { position: absolute; inset: 0; }
+.particle { position: absolute; border-radius: 50%; background: #fff; opacity: 0; animation: floatUp linear infinite; }
+@keyframes floatUp { 0% { transform: translateY(100px) scale(0.5); opacity: 0; } 20% { opacity: 0.4; } 80% { opacity: 0.4; } 100% { transform: translateY(-200px) scale(1.2); opacity: 0; } }

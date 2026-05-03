@@ -16,7 +16,7 @@ const PremiumBackground = () => {
         size: `${Math.random() * 3 + 1}px`,
         duration: `${Math.random() * 10 + 10}s`, // 10s to 20s
         delay: `${Math.random() * 10}s`,
-        color: isLight ? '#60a5fa' : '#3b82f6',
+        color: isLight ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.3)',
         opacity: Math.random() * 0.5 + 0.1
       };
     });

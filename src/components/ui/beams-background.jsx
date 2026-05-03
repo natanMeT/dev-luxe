@@ -12,7 +12,7 @@ function createBeam(width, height) {
     angle,
     speed: 0.6 + Math.random() * 1.2,
     opacity: 0.12 + Math.random() * 0.16,
-    hue: 190 + Math.random() * 70,
+    hue: 0,
     pulse: Math.random() * Math.PI * 2,
     pulseSpeed: 0.02 + Math.random() * 0.03,
   };
@@ -56,7 +56,7 @@ export function BeamsBackground({ className, children, intensity = 'strong' }) {
       beam.x = column * spacing + spacing / 2 + (Math.random() - 0.5) * spacing * 0.5;
       beam.width = 100 + Math.random() * 100;
       beam.speed = 0.5 + Math.random() * 0.4;
-      beam.hue = 190 + (index * 70) / totalBeams;
+      beam.hue = 0;
       beam.opacity = 0.2 + Math.random() * 0.1;
       return beam;
     }
@@ -67,12 +67,12 @@ export function BeamsBackground({ className, children, intensity = 'strong' }) {
       ctx.rotate((beam.angle * Math.PI) / 180);
       const pulsingOpacity = beam.opacity * (0.8 + Math.sin(beam.pulse) * 0.2) * opacityMap[intensity];
       const gradient = ctx.createLinearGradient(0, 0, 0, beam.length);
-      gradient.addColorStop(0, `hsla(${beam.hue}, 85%, 65%, 0)`);
-      gradient.addColorStop(0.1, `hsla(${beam.hue}, 85%, 65%, ${pulsingOpacity * 0.5})`);
-      gradient.addColorStop(0.4, `hsla(${beam.hue}, 85%, 65%, ${pulsingOpacity})`);
-      gradient.addColorStop(0.6, `hsla(${beam.hue}, 85%, 65%, ${pulsingOpacity})`);
-      gradient.addColorStop(0.9, `hsla(${beam.hue}, 85%, 65%, ${pulsingOpacity * 0.5})`);
-      gradient.addColorStop(1, `hsla(${beam.hue}, 85%, 65%, 0)`);
+      gradient.addColorStop(0, `rgba(255, 255, 255, 0)`);
+      gradient.addColorStop(0.1, `rgba(255, 255, 255, ${pulsingOpacity * 0.5})`);
+      gradient.addColorStop(0.4, `rgba(255, 255, 255, ${pulsingOpacity})`);
+      gradient.addColorStop(0.6, `rgba(255, 255, 255, ${pulsingOpacity})`);
+      gradient.addColorStop(0.9, `rgba(255, 255, 255, ${pulsingOpacity * 0.5})`);
+      gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
       ctx.fillStyle = gradient;
       ctx.fillRect(-beam.width / 2, 0, beam.width, beam.length);
       ctx.restore();

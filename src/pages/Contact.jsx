@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MessageCircle, ChevronDown } from 'lucide-react';
 import FluxArchitecture from '../components/FluxArchitecture';
+import { EtherealBeams } from '@/components/ui/ethereal-beams';
 
 const Contact = () => {
   // Scroll to top on load
@@ -31,7 +32,23 @@ const Contact = () => {
   ];
 
   return (
-    <div className="contact-wrapper" dir="rtl" style={{ minHeight: '100vh', paddingTop: '100px', color: '#ffffff' }}>
+    <div className="contact-wrapper relative overflow-hidden" dir="rtl" style={{ minHeight: '100vh', paddingTop: '100px', color: '#ffffff', background: '#000' }}>
+      
+      {/* Ethereal Beams Background */}
+      <div className="absolute inset-0 z-0 opacity-60">
+        <EtherealBeams
+          beamWidth={2.5}
+          beamHeight={18}
+          beamNumber={15}
+          lightColor="#ffffff"
+          speed={2.5}
+          noiseIntensity={2}
+          scale={0.15}
+          rotation={43}
+        />
+      </div>
+
+      <div className="relative z-10">
       
       {/* Discovery Call Hero */}
       <section className="container" style={{ padding: '6rem 0 4rem' }}>
@@ -290,6 +307,7 @@ const Contact = () => {
         </div>
       </section>
 
+      </div>
     </div>
   );
 };

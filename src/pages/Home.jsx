@@ -74,21 +74,6 @@ const Home = () => {
             >
               Think Big
             </h1>
-            <h2 
-              className="mt-3 text-lg md:text-xl tracking-[6px] uppercase"
-              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, color: '#3b82f6' }}
-            >
-              Flux Studio
-            </h2>
-
-            <p className="mt-6 text-base md:text-lg max-w-xl leading-relaxed" style={{ color: 'rgba(148, 163, 184, 0.85)' }}>
-              אנחנו לא רק בונים אתרים. אנחנו יוצרים חוויות יוקרה סינמטיות שממירות מבקרים ללקוחות משלמים.
-            </p>
-
-            <div className="flex gap-4 mt-10 flex-wrap">
-              <a href="#pricing" className="btn btn-primary">ראה חבילות</a>
-              <Link to="/contact" className="btn btn-outline">דברו איתנו</Link>
-            </div>
           </motion.div>
 
           {/* Left side - Spline 3D */}
